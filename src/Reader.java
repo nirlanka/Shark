@@ -15,8 +15,7 @@ public class Reader {
                 Sea.lbl_status_open.setText("Completed opening file");
                 Sea.lbl_status_open.setStyle("-fx-background-color: #f5b");
             } catch (NullPointerException e) {
-                e.printStackTrace();
-//                System.out.println("NullPointerException -- full path needed");
+//                e.printStackTrace();
                 Sea.lbl_status_open.setText("Error opening file");
                 Sea.lbl_status_open.setStyle("-fx-background-color: #f77");
             }

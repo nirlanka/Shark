@@ -45,7 +45,7 @@ public class Projector {
             String[] words=line.split(" ");
 
             for (String word : words) {
-                if (!word.equals("")) {
+                if (!word.equals("") && !word.contains("/")) {
                     filters.add(filters.size(), word);
                 }
             }

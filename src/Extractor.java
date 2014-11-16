@@ -53,7 +53,6 @@ public class Extractor {
                 }
 
                 Sea.packets.add(Sea.packets.size(), packet);
-//                System.out.println(packet.toString());
             }
 
         }

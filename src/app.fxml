@@ -31,7 +31,13 @@
             </TableView>
             <Accordion layoutX="402.0" layoutY="6.0" prefHeight="381.0" prefWidth="239.0">
               <panes>
-                <TitledPane text="Open file">
+                  <TitledPane text="Capture"><content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                          </children>
+                      </AnchorPane>
+                  </content></TitledPane>
+                <TitledPane text="Offline">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
@@ -57,6 +63,12 @@
                            </children></AnchorPane>
                   </content>
                 </TitledPane>
+                  <TitledPane text="Statistics"><content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                          </children>
+                      </AnchorPane>
+                  </content></TitledPane>
               </panes>
             </Accordion>
          </children>
