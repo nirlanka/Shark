@@ -22,6 +22,7 @@ public class Controller implements Initializable {
     public Button btn_filter;
     public CheckBox chk_filter;
     public Button btn_filter_clear;
+    public Label lbl_status_open;
 
 
     @Override
@@ -40,6 +41,7 @@ public class Controller implements Initializable {
 //        Sea.btn_filter=btn_filter;
         Sea.chk_filter=chk_filter;
 //        Sea.btn_filter_clear=btn_filter_clear;
+        Sea.lbl_status_open=lbl_status_open;
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));

@@ -12,9 +12,13 @@ public class Reader {
     void loadFile() {
             try {
                 new Extractor(getPcap(Sea.txt_file.getText()));
+                Sea.lbl_status_open.setText("Completed opening file");
+                Sea.lbl_status_open.setStyle("-fx-background-color: #f5b");
             } catch (NullPointerException e) {
                 e.printStackTrace();
-                System.out.println("NullPointerException -- full path needed");
+//                System.out.println("NullPointerException -- full path needed");
+                Sea.lbl_status_open.setText("Error opening file");
+                Sea.lbl_status_open.setStyle("-fx-background-color: #f77");
             }
     }
 

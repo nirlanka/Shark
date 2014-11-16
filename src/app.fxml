@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -34,8 +35,13 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="209.0" promptText="/path/file.*cap" />
-                              <Button fx:id="btn_open" layoutX="96.0" layoutY="49.0" mnemonicParsing="false" text="Open" />
+                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="209.0" promptText="/path/file.*cap" />
+                              <Button fx:id="btn_open" layoutX="96.0" layoutY="78.0" mnemonicParsing="false" text="Open" />
+                              <Label fx:id="lbl_status_open" alignment="CENTER" layoutX="-1.0" prefHeight="33.0" prefWidth="239.0" style="-fx-background-color: #bbb;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                   </content>

@@ -25,4 +25,5 @@ public class Sea {
     public static Button btn_filter;
     public static CheckBox chk_filter;
     public static Button btn_filter_clear;
+    public static Label lbl_status_open;
 }
