@@ -9,7 +9,7 @@ public class Sea {
 
     public static ArrayList<Packet> packets=new ArrayList<Packet>();
 
-    public static String filename="/dev/java/IdeaProjects/Shark/caps/test.pcap"; //temp
+    public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
 
     // types --> string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown";

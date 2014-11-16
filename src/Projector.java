@@ -50,9 +50,14 @@ public class Projector {
 
 
     ArrayList<String> filters;
+    int lowerThan, greaterThan;
+    boolean compareSize;
 
     public void setFilters() {
         filters=new ArrayList<String>();
+
+        compareSize=false;
+        lowerThan = 99999; greaterThan = -1;
 
         String[] lines=Sea.txt_filters.getText().split("\n");
 
@@ -61,7 +66,17 @@ public class Projector {
             String[] words=line.split(" ");
 
             for (String word : words) {
-                if (!word.equals("") && !word.contains("/")) {
+                if (word.contains(">") || word.contains("<")) {
+                    compareSize=true;
+                    if (word.contains(">")) { //size>100
+                        greaterThan=getNumOfComparison(word);
+//                        System.out.println(word.split(">")[1]);
+                    } else { //size<100
+                        lowerThan=getNumOfComparison(word);
+//                        System.out.println(word.split("<")[1]);
+                    }
+                }
+                else if (!word.equals("") && !word.contains("/")) {
                     filters.add(filters.size(), word);
                 }
             }
@@ -74,6 +89,32 @@ public class Projector {
             if (!packet.toString().contains(filter))
                 return false;
         }
+        if (compareSize) {
+            if (!(packet.getSize()<=lowerThan)) {
+                System.out.println(packet.getSize()+"<="+lowerThan);
+                return false;
+            }
+            if (!(packet.getSize()>=greaterThan)) {
+                System.out.println(packet.getSize()+">="+greaterThan);
+                return false;
+            }
+        }
         return true;
+    }
+
+    static int getNumOfComparison(String word) {
+        char[] __word=word.toCharArray();
+        String num="";
+        boolean passedComparator=false;
+
+        for (char c : __word) {
+            if (!passedComparator) {
+                if (c=='>' || c=='<') passedComparator=true;
+            } else {
+                num+=c;
+            }
+        }
+
+        return Integer.parseInt(num);
     }
 }
