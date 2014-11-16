@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -61,6 +62,19 @@ public class Controller implements Initializable {
                 Projector proj=new Projector(Sea.packets);
                 proj.setFilters();
                 proj.showFiltered();
+                btn_filter.setDisable(true);
+            }
+        });
+        txt_filters.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                btn_filter.setDisable(false);
+            }
+        });
+        chk_filter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                btn_filter.setDisable(false);
             }
         });
 
