@@ -32,11 +32,19 @@ public class Projector {
 
         if (filtered>0) {
             Sea.lbl_status_filtered_stats.setText("Filtered: "+filtered+" packets"); // in statistics
+            Sea.lbl_status_filtered_stats.setStyle("-fx-background-color: #4cf");
+
             Sea.lbl_status_filtered_stats1.setText(filtered+" packets"); // in filter
+            Sea.lbl_status_filtered_stats1.setStyle("-fx-background-color: #a4f");
+
         }
         else {
             Sea.lbl_status_filtered_stats.setText("");
+            Sea.lbl_status_filtered_stats.setStyle("-fx-background-color: #bbb");
+
             Sea.lbl_status_filtered_stats1.setText("");
+            Sea.lbl_status_filtered_stats1.setStyle("-fx-background-color: #bbb");
+
         }
     }
 
