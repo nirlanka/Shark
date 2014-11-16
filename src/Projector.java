@@ -14,11 +14,7 @@ public class Projector {
         packets=_packets;
     }
 
-//    Projector() {}
-
-
     public void showFiltered() {
-//        observablePackets.clear();
         observablePackets = FXCollections.observableArrayList();
 
         if (!Sea.chk_filter.isSelected())

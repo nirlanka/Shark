@@ -12,7 +12,7 @@ public class Sea {
     public static String filename="/dev/java/IdeaProjects/Shark/caps/NTLM-wenchao.pcap"; //temp
 
     // types --> string
-    public static String HTTP="HTTP (TCP)", TCP="TCP", UDP="UDP", Unknown="Unknown";
+    public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown";
 
     // ui elements
     public static TableColumn col_source;
@@ -26,4 +26,11 @@ public class Sea {
     public static CheckBox chk_filter;
     public static Button btn_filter_clear;
     public static Label lbl_status_open;
+
+    public static Label count_http;
+    public static Label count_tcp;
+    public static Label count_udp;
+    public static Label size_http;
+    public static Label size_tcp;
+    public static Label size_udp;
 }

@@ -18,7 +18,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="394.0" prefWidth="648.0">
+      <AnchorPane prefHeight="394.0" prefWidth="686.0">
          <children>
             <TableView fx:id="table_packets" layoutX="7.0" layoutY="6.0" prefHeight="381.0" prefWidth="388.0">
               <columns>
@@ -29,7 +29,7 @@
                   <TableColumn fx:id="col_type" prefWidth="75.0" text="Type" />
               </columns>
             </TableView>
-            <Accordion layoutX="402.0" layoutY="6.0" prefHeight="381.0" prefWidth="239.0">
+            <Accordion layoutX="402.0" layoutY="6.0" prefHeight="381.0" prefWidth="278.0">
               <panes>
                   <TitledPane text="Capture"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -41,9 +41,9 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="209.0" promptText="/path/file.*cap" />
-                              <Button fx:id="btn_open" layoutX="96.0" layoutY="78.0" mnemonicParsing="false" text="Open" />
-                              <Label fx:id="lbl_status_open" alignment="CENTER" layoutX="-1.0" prefHeight="33.0" prefWidth="239.0" style="-fx-background-color: #bbb;" textFill="WHITE">
+                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="248.0" promptText="/path/file.*cap" />
+                              <Button fx:id="btn_open" layoutX="115.0" layoutY="78.0" mnemonicParsing="false" text="Open" />
+                              <Label fx:id="lbl_status_open" alignment="CENTER" layoutX="-1.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
@@ -56,17 +56,43 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea fx:id="txt_filters" layoutX="7.0" layoutY="30.0" prefHeight="76.0" prefWidth="223.0" promptText="terms" />
-                              <Button fx:id="btn_filter" layoutX="52.0" layoutY="117.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
-                              <CheckBox fx:id="chk_filter" layoutX="7.0" layoutY="6.0" mnemonicParsing="false" selected="true" text="Filter" />
-                              <Button fx:id="btn_filter_clear" layoutX="124.0" layoutY="117.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                              <TextArea fx:id="txt_filters" layoutX="12.0" layoutY="40.0" prefHeight="76.0" prefWidth="253.0" promptText="terms" />
+                              <Button fx:id="btn_filter" layoutX="72.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
+                              <CheckBox fx:id="chk_filter" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Filter" />
+                              <Button fx:id="btn_filter_clear" layoutX="144.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
                            </children></AnchorPane>
                   </content>
                 </TitledPane>
                   <TitledPane text="Statistics"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <children>
-                          </children>
+                           <children>
+                              <GridPane layoutX="23.0" layoutY="16.0" prefHeight="75.0" prefWidth="222.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="59.0" minWidth="10.0" prefWidth="42.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="55.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="73.0" minWidth="10.0" prefWidth="59.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="68.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="HTTP      " underline="true" GridPane.columnIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="61.0" text="Other TCP" underline="true" GridPane.columnIndex="2" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="65.0" text="UDP           " underline="true" GridPane.columnIndex="3" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="count" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="63.0" text="size" GridPane.rowIndex="2" />
+                                     <Label fx:id="count_http" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                     <Label fx:id="count_tcp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                     <Label fx:id="count_udp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                     <Label fx:id="size_http" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                     <Label fx:id="size_tcp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                     <Label fx:id="size_udp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
                       </AnchorPane>
                   </content></TitledPane>
               </panes>

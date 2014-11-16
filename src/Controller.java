@@ -23,6 +23,12 @@ public class Controller implements Initializable {
     public CheckBox chk_filter;
     public Button btn_filter_clear;
     public Label lbl_status_open;
+    public Label count_http;
+    public Label count_tcp;
+    public Label count_udp;
+    public Label size_http;
+    public Label size_tcp;
+    public Label size_udp;
 
 
     @Override
@@ -42,6 +48,13 @@ public class Controller implements Initializable {
         Sea.chk_filter=chk_filter;
 //        Sea.btn_filter_clear=btn_filter_clear;
         Sea.lbl_status_open=lbl_status_open;
+
+        Sea.count_http=count_http;
+        Sea.count_tcp=count_tcp;
+        Sea.count_udp=count_udp;
+        Sea.size_http=size_http;
+        Sea.size_tcp=size_tcp;
+        Sea.size_udp=size_tcp;
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
