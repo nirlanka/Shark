@@ -15,15 +15,14 @@ import java.util.ArrayList;
  */
 public class Extractor {
     public Extractor(Pcap pcap) {
-        pcap.loop(Pcap.LOOP_INFINITE, packetHandler, packets);
+        Sea.packets.clear();
+        pcap.loop(Pcap.LOOP_INFINITE, packetHandler, Sea.packets);
         pcap.close();
         // view
-        Projector projector=new Projector(packets);
+        Projector projector=new Projector(Sea.packets);
         projector.setFilters();
         projector.showFiltered();
     }
-
-    ArrayList<Packet> packets=new ArrayList<Packet>();
 
     PcapPacketHandler<ArrayList> packetHandler=new PcapPacketHandler<ArrayList>() {
 
@@ -53,7 +52,7 @@ public class Extractor {
                     packet.setType(Sea.UDP);
                 }
 
-                packets.add(packets.size(), packet);
+                Sea.packets.add(Sea.packets.size(), packet);
 //                System.out.println(packet.toString());
             }
 

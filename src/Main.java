@@ -13,7 +13,7 @@ public class Main extends Application {
         Scene scene=new Scene(root);
 
         // code
-        new Reader(); // temp
+//        new Reader(); // temp
 
 
         primaryStage.setScene(scene);

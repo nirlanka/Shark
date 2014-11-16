@@ -1,3 +1,5 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -18,6 +20,7 @@ public class Controller implements Initializable {
     public TextArea txt_filters;
     public Button btn_filter;
     public CheckBox chk_filter;
+    public Button btn_filter_clear;
 
 
     @Override
@@ -33,8 +36,9 @@ public class Controller implements Initializable {
         Sea.col_type=col_type;
         Sea.table_packets=table_packets;
         Sea.txt_filters=txt_filters;
-        Sea.btn_filter=btn_filter;
+//        Sea.btn_filter=btn_filter;
         Sea.chk_filter=chk_filter;
+//        Sea.btn_filter_clear=btn_filter_clear;
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
@@ -44,5 +48,22 @@ public class Controller implements Initializable {
 
 
         // assign triggers & events
+
+        btn_open.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                new Reader();
+            }
+        });
+        btn_filter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Projector proj=new Projector(Sea.packets);
+                proj.setFilters();
+                proj.showFiltered();
+            }
+        });
+
+        //[]// clear --> no auto refresh [but prompt to apply]
     }
 }

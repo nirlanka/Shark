@@ -8,14 +8,18 @@ import java.util.ArrayList;
  */
 public class Projector {
     ArrayList<Packet> packets;
-    ObservableList<Packet> observablePackets = FXCollections.observableArrayList();
+    ObservableList<Packet> observablePackets;
 
     Projector(ArrayList<Packet> _packets) {
         packets=_packets;
     }
 
+//    Projector() {}
+
+
     public void showFiltered() {
-        observablePackets.clear();
+//        observablePackets.clear();
+        observablePackets = FXCollections.observableArrayList();
 
         if (!Sea.chk_filter.isSelected())
             observablePackets.addAll(packets);
@@ -28,11 +32,32 @@ public class Projector {
         Sea.table_packets.setItems(observablePackets);
     }
 
+
+    ArrayList<String> filters;
+
     public void setFilters() {
-        //
+        filters=new ArrayList<String>();
+
+        String[] lines=Sea.txt_filters.getText().split("\n");
+
+        for (String line : lines) {
+
+            String[] words=line.split(" ");
+
+            for (String word : words) {
+                if (!word.equals("")) {
+                    filters.add(filters.size(), word);
+                }
+            }
+
+        }
     }
 
     private boolean filterPacket(Packet packet) {
+        for (String filter : filters) {
+            if (!packet.toString().contains(filter))
+                return false;
+        }
         return true;
     }
 }
