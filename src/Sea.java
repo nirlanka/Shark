@@ -9,7 +9,7 @@ public class Sea {
 
     public static ArrayList<Packet> packets=new ArrayList<Packet>();
 
-    public static String filename="/dev/java/IdeaProjects/Shark/caps/NTLM-wenchao.pcap"; //temp
+    public static String filename="/dev/java/IdeaProjects/Shark/caps/test.pcap"; //temp
 
     // types --> string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown";
@@ -33,4 +33,6 @@ public class Sea {
     public static Label size_http;
     public static Label size_tcp;
     public static Label size_udp;
+    public static Label lbl_status_filtered_stats;
+    public static Label lbl_status_filtered_stats1;
 }

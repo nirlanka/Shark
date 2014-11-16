@@ -16,16 +16,28 @@ public class Projector {
 
     public void showFiltered() {
         observablePackets = FXCollections.observableArrayList();
+        int filtered=0;
 
         if (!Sea.chk_filter.isSelected())
             observablePackets.addAll(packets);
         else
             for (Packet packet : packets) {
-                if (filterPacket(packet))
+                if (filterPacket(packet)) {
                     observablePackets.add(packet);
+                    filtered++;
+                }
             }
 
         Sea.table_packets.setItems(observablePackets);
+
+        if (filtered>0) {
+            Sea.lbl_status_filtered_stats.setText("Filtered: "+filtered+" packets"); // in statistics
+            Sea.lbl_status_filtered_stats1.setText(filtered+" packets"); // in filter
+        }
+        else {
+            Sea.lbl_status_filtered_stats.setText("");
+            Sea.lbl_status_filtered_stats1.setText("");
+        }
     }
 
 

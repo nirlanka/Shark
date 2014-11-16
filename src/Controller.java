@@ -29,6 +29,8 @@ public class Controller implements Initializable {
     public Label size_http;
     public Label size_tcp;
     public Label size_udp;
+    public Label lbl_status_filtered_stats;
+    public Label lbl_status_filtered_stats1;
 
 
     @Override
@@ -55,6 +57,8 @@ public class Controller implements Initializable {
         Sea.size_http=size_http;
         Sea.size_tcp=size_tcp;
         Sea.size_udp=size_tcp;
+        Sea.lbl_status_filtered_stats=lbl_status_filtered_stats;
+        Sea.lbl_status_filtered_stats1=lbl_status_filtered_stats1;
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
@@ -89,6 +93,13 @@ public class Controller implements Initializable {
         chk_filter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                btn_filter.setDisable(false);
+            }
+        });
+        btn_filter_clear.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                txt_filters.setText("");
                 btn_filter.setDisable(false);
             }
         });

@@ -56,17 +56,22 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea fx:id="txt_filters" layoutX="12.0" layoutY="40.0" prefHeight="76.0" prefWidth="253.0" promptText="terms" />
-                              <Button fx:id="btn_filter" layoutX="72.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
-                              <CheckBox fx:id="chk_filter" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Filter" />
-                              <Button fx:id="btn_filter_clear" layoutX="144.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                              <TextArea fx:id="txt_filters" layoutX="14.0" layoutY="64.0" prefHeight="76.0" prefWidth="253.0" promptText="terms" />
+                              <Button fx:id="btn_filter" layoutX="74.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
+                              <CheckBox fx:id="chk_filter" layoutX="16.0" layoutY="38.0" mnemonicParsing="false" selected="true" text="Filter" />
+                              <Button fx:id="btn_filter_clear" layoutX="146.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                              <Label fx:id="lbl_status_filtered_stats1" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
                            </children></AnchorPane>
                   </content>
                 </TitledPane>
                   <TitledPane text="Statistics"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <GridPane layoutX="23.0" layoutY="16.0" prefHeight="75.0" prefWidth="222.0">
+                              <GridPane layoutX="28.0" layoutY="44.0" prefHeight="75.0" prefWidth="222.0">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="59.0" minWidth="10.0" prefWidth="42.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="55.0" />
@@ -82,8 +87,14 @@
                                     <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="HTTP      " underline="true" GridPane.columnIndex="1" />
                                     <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="61.0" text="Other TCP" underline="true" GridPane.columnIndex="2" />
                                     <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="65.0" text="UDP           " underline="true" GridPane.columnIndex="3" />
-                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="count" GridPane.rowIndex="1" />
-                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="63.0" text="size" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="count" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Label>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="63.0" text="size" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Label>
                                      <Label fx:id="count_http" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                      <Label fx:id="count_tcp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                      <Label fx:id="count_udp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
@@ -92,6 +103,11 @@
                                      <Label fx:id="size_udp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                  </children>
                               </GridPane>
+                              <Label fx:id="lbl_status_filtered_stats" alignment="CENTER" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
                            </children>
                       </AnchorPane>
                   </content></TitledPane>
