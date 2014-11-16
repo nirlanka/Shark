@@ -36,7 +36,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // test
-        txt_file.setText(Sea.filename);
+//        txt_file.setText(Sea.filename);
 
         // expose ui components
         Sea.col_source=col_source;
