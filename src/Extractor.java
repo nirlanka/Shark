@@ -55,7 +55,7 @@ public class Extractor {
 
                 PcapHeader header=pcapPacket.getCaptureHeader();
                 int size=header.wirelen();
-                packet.setSize(size+"");
+                packet.setSize(size);
                 if (pcapPacket.hasHeader(tcp)) {
                     if (pcapPacket.hasHeader(http)) {
                         packet.setType(Sea.HTTP);

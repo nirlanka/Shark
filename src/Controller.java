@@ -13,7 +13,7 @@ public class Controller implements Initializable {
     @FXML
     public TableColumn<Packet, String> col_source;
     public TableColumn<Packet, String> col_destination;
-    public TableColumn<Packet, String> col_size;
+    public TableColumn<Packet, Integer> col_size;
     public TableColumn<Packet, String> col_type;
     public TextField txt_file;
     public Button btn_open;
@@ -63,7 +63,7 @@ public class Controller implements Initializable {
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
         col_destination.setCellValueFactory(new PropertyValueFactory<Packet, String>("destination"));
-        col_size.setCellValueFactory(new PropertyValueFactory<Packet, String>("size"));
+        col_size.setCellValueFactory(new PropertyValueFactory<Packet, Integer>("size"));
         col_type.setCellValueFactory(new PropertyValueFactory<Packet, String>("type"));
 
 
