@@ -6,6 +6,8 @@ Packet capturing, analyzing and extraction of security related data in Java.
 
 Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1_
 
+![ A screenshot of Shark ](content/screenshot-1.png)
+
 ### (planned) development milestones or **features**
 
 - [x] read offline **(captured to file)** packets
@@ -14,7 +16,7 @@ Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Win
 - [x] JavaFX GUI
 - [ ] live capturing &mdash; [ @MadushaJ ](https://github.com/madushaj "Madusha's GitHub"), [ @NirmalL ](https://github.com/NirmalL "Nirmal's GitHub")
 - [ ] documentation &mdash; [ @NarmadaBalasooriya ](https://github.com/NarmadaBalasooriya "Narmada's GitHub")
-- [ ] **(enhancements)**
+- [ ] {enhancements}
 
 These are just the initial goals. Once they're accomplished, we'll be moving on to much more interesting and hacking-related stuff.
 
