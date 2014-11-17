@@ -13,8 +13,8 @@ public class Main extends Application {
         Scene scene=new Scene(root);
 
         // code
-        Sea.txt_file.setText(Sea.filename);
-        new Reader(); // temp
+//        Sea.txt_file.setText(Sea.filename);
+//        new Reader(); // temp
 
 
         primaryStage.setScene(scene);
