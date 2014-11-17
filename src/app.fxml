@@ -33,8 +33,19 @@
               <panes>
                   <TitledPane text="Capture"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <children>
-                          </children>
+                           <children>
+                              <ListView fx:id="lst_interfaces" layoutX="14.0" layoutY="73.0" prefHeight="124.0" prefWidth="248.0" />
+                              <Button fx:id="btn_start" layoutX="77.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Start" />
+                              <Button fx:id="btn_stop" layoutX="141.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Stop" />
+                              <TextField fx:id="txt_count_cap" layoutX="35.0" layoutY="41.0" prefHeight="25.0" prefWidth="116.0" promptText="number of packets" />
+                              <CheckBox fx:id="chk_count_cap" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" selected="true" />
+                              <Label fx:id="lbl_status_open_cap" alignment="CENTER" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_get_interfaces" layoutX="173.0" layoutY="41.0" mnemonicParsing="false" text="Get interfaces" />
+                           </children>
                       </AnchorPane>
                   </content></TitledPane>
                 <TitledPane text="Offline">

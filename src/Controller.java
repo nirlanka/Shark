@@ -33,6 +33,13 @@ public class Controller implements Initializable {
     public Label lbl_status_filtered_stats1;
     public TextField txt_count;
     public CheckBox chk_count;
+    public ListView<String> lst_interfaces;
+    public Button btn_get_interfaces;
+    public Button btn_start;
+    public Button btn_stop;
+    public TextField txt_count_cap;
+    public CheckBox chk_count_cap;
+    public Label lbl_status_open_cap;
 
 
     @Override
@@ -65,12 +72,18 @@ public class Controller implements Initializable {
         Sea.txt_count=txt_count;
         Sea.chk_count=chk_count;
 
+        Sea.lst_interfaces=lst_interfaces;
+        Sea.btn_get_interfaces=btn_get_interfaces;
+//        Sea.btn_stop;
+//        Sea.btn_start=btn_start;
+
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
         col_destination.setCellValueFactory(new PropertyValueFactory<Packet, String>("destination"));
         col_size.setCellValueFactory(new PropertyValueFactory<Packet, Integer>("size"));
         col_type.setCellValueFactory(new PropertyValueFactory<Packet, String>("type"));
 
+        final Live live=new Live();
 
         // assign triggers & events
 
@@ -106,6 +119,33 @@ public class Controller implements Initializable {
             public void handle(ActionEvent event) {
                 txt_filters.setText("");
                 btn_filter.setDisable(false);
+            }
+        });
+
+        btn_get_interfaces.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                live.getInterfaces();
+            }
+        });
+        btn_start.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String str=lst_interfaces.getSelectionModel().getSelectedItem();
+                live.capturePackets(str.split(":")[0].split("#")[1]);
+            }
+        });
+        btn_stop.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Sea.pcap.breakloop();
+                System.out.println("Sea.pcap.breakloop()");
+                try {
+                    Sea.thread.join();
+                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+                    System.out.println("//");
+                }
             }
         });
 
