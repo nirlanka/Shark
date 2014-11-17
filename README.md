@@ -2,7 +2,7 @@ Shark
 =====
 
 Packet capturing, analyzing and extraction of security related data in Java.
-**(Not a fork of the deprecated *SharkHunt* project)**
+(Not a fork of the deprecated *SharkHunt* project)
 
 Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1_
 
