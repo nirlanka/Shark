@@ -91,11 +91,11 @@ public class Projector {
         }
         if (compareSize) {
             if (!(packet.getSize()<=lowerThan)) {
-                System.out.println(packet.getSize()+"<="+lowerThan);
+//                System.out.println(packet.getSize()+"<="+lowerThan);
                 return false;
             }
             if (!(packet.getSize()>=greaterThan)) {
-                System.out.println(packet.getSize()+">="+greaterThan);
+//                System.out.println(packet.getSize()+">="+greaterThan);
                 return false;
             }
         }
