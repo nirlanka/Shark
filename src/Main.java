@@ -16,6 +16,7 @@ public class Main extends Application {
 //        Sea.txt_file.setText(Sea.filename);
 //        new Reader(); // temp
 
+        primaryStage.setResizable(false);
 
         primaryStage.setScene(scene);
         primaryStage.show();

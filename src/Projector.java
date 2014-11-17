@@ -49,6 +49,8 @@ public class Projector {
     }
 
 
+    //[]// filter-OUT stuff
+
     ArrayList<String> filters;
     int lowerThan, greaterThan;
     boolean compareSize;
@@ -70,10 +72,8 @@ public class Projector {
                     compareSize=true;
                     if (word.contains(">")) { //size>100
                         greaterThan=getNumOfComparison(word);
-//                        System.out.println(word.split(">")[1]);
                     } else { //size<100
                         lowerThan=getNumOfComparison(word);
-//                        System.out.println(word.split("<")[1]);
                     }
                 }
                 else if (!word.equals("") && !word.contains("/")) {
@@ -91,11 +91,9 @@ public class Projector {
         }
         if (compareSize) {
             if (!(packet.getSize()<=lowerThan)) {
-//                System.out.println(packet.getSize()+"<="+lowerThan);
                 return false;
             }
             if (!(packet.getSize()>=greaterThan)) {
-//                System.out.println(packet.getSize()+">="+greaterThan);
                 return false;
             }
         }
