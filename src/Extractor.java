@@ -16,8 +16,14 @@ import java.util.ArrayList;
 public class Extractor {
     public Extractor(Pcap pcap) {
 
+        int count=Sea.max_count, user_count=0;
+        if (!Sea.txt_count.getText().equals(""))
+            user_count=Integer.parseInt(Sea.txt_count.getText());
+        if (Sea.chk_count.isSelected() && count>user_count)
+            count=user_count;
+
         Sea.packets.clear();
-        pcap.loop(Pcap.LOOP_INFINITE, packetHandler, Sea.packets);
+        pcap.loop(count, packetHandler, Sea.packets);
         pcap.close();
 
         // view

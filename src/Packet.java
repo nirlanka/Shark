@@ -40,9 +40,9 @@ public class Packet {
 
     @Override
     public String toString() {
-        return     "from="+getSource()
-                +" to="+getDestination()
-                +" size="+getSize()
-                +" prot="+getType().toLowerCase();
+        return   "from="+getSource()+"-src"
+                +"to="+getDestination()+"-dest"
+                +"size="+getSize()
+                +"prot="+getType().toLowerCase();
     }
 }

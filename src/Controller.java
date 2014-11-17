@@ -31,6 +31,8 @@ public class Controller implements Initializable {
     public Label size_udp;
     public Label lbl_status_filtered_stats;
     public Label lbl_status_filtered_stats1;
+    public TextField txt_count;
+    public CheckBox chk_count;
 
 
     @Override
@@ -59,6 +61,9 @@ public class Controller implements Initializable {
         Sea.size_udp=size_tcp;
         Sea.lbl_status_filtered_stats=lbl_status_filtered_stats;
         Sea.lbl_status_filtered_stats1=lbl_status_filtered_stats1;
+
+        Sea.txt_count=txt_count;
+        Sea.chk_count=chk_count;
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));

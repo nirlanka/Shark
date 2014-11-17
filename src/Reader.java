@@ -11,6 +11,8 @@ public class Reader {
 
     void loadFile() {
             try {
+                Sea.lbl_status_open.setStyle("-fx-background-color: #5d8");
+                Sea.lbl_status_open.setText("Loading file...");
                 new Extractor(getPcap(Sea.txt_file.getText()));
                 Sea.lbl_status_open.setText("Completed opening file");
                 Sea.lbl_status_open.setStyle("-fx-background-color: #f5b");

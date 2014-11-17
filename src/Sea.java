@@ -11,6 +11,8 @@ public class Sea {
 
     public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
 
+    public static int max_count = 4999;//Pcap.LOOP_INFINITE;
+
     // types --> string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown";
 
@@ -35,4 +37,6 @@ public class Sea {
     public static Label size_udp;
     public static Label lbl_status_filtered_stats;
     public static Label lbl_status_filtered_stats1;
+    public static TextField txt_count;
+    public static CheckBox chk_count;
 }
