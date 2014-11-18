@@ -57,6 +57,9 @@ public class Sea {
     public static Button btn_start;
     public static Label lbl_status_open_cap;
 
+    static int n_packets_all=0, n_http=0, n_tcp_other=0, n_udp=0, n_packets_unknown=0,
+    /*s_packets_all=0,*/ s_http=0, s_tcp_other=0, s_udp=0/*, s_packets_unknown=0*/;
+
     public static void setDevices(List<PcapIf> _devices) {
         devices=_devices;
     }

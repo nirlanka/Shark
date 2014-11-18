@@ -60,6 +60,9 @@ public class Extractor {
 
 //        n_packets_all=Sea.txt
 
+        Sea.n_packets_all=0; Sea.n_http=0; Sea.n_tcp_other=0; Sea.n_udp=0; Sea.n_packets_unknown=0;
+        /*s_packets_all=0;*/ Sea.s_http=0; Sea.s_tcp_other=0; Sea.s_udp=0/*; s_packets_unknown=0*/;
+
         Sea.packets.clear();
         pcap.loop(count, packetHandler, Sea.packets);
         pcap.close();
@@ -76,10 +79,8 @@ public class Extractor {
 //        Sea.size_http.setText(s_http+"");
 //        Sea.size_tcp.setText(s_tcp_other+"");
 //        Sea.size_udp.setText(s_udp+"");
-    }
 
-    int n_packets_all=0, n_http=0, n_tcp_other=0, n_udp=0, n_packets_unknown=0,
-        /*s_packets_all=0,*/ s_http=0, s_tcp_other=0, s_udp=0/*, s_packets_unknown=0*/;
+    }
 
     PcapPacketHandler<ArrayList> packetHandler=new PcapPacketHandler<ArrayList>() {
 
@@ -105,31 +106,31 @@ public class Extractor {
                 if (pcapPacket.hasHeader(tcp)) {
                     if (pcapPacket.hasHeader(http)) {
                         packet.setType(Sea.HTTP);
-                        n_http++;
-                        s_http+=size;
+                        Sea.n_http++;
+                        Sea.s_http+=size;
                     } else {
                         packet.setType(Sea.TCP);
-                        n_tcp_other++;
-                        s_tcp_other+=size;
+                        Sea.n_tcp_other++;
+                        Sea.s_tcp_other+=size;
                     }
                 } else if (pcapPacket.hasHeader(udp)) {
                     packet.setType(Sea.UDP);
-                    n_udp++;
-                    s_udp+=size;
+                    Sea.n_udp++;
+                    Sea.s_udp+=size;
                 }
 
 //                System.out.println(packet.toString());
 
                 Sea.packets.add(Sea.packets.size(), packet);
             } else {
-                n_packets_unknown++;
+                Sea.n_packets_unknown++;
 //                s_packets_unknown+=size;
             }
 
-            n_packets_all++;
+            Sea.n_packets_all++;
 //            s_packets_all+=size;
 
-            if (n_packets_all>=COUNT)
+            if (Sea.n_packets_all>=COUNT)
                 try {
                     Sea.pcap.breakloop();
                     System.out.println("COUNT");
