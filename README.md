@@ -14,8 +14,8 @@ Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Win
 - [x] extract them to memory and store **(in-memory)** efficiently
 - [x] filter them dynamicallly and efficiently
 - [x] JavaFX GUI
-- [x] live capturing &mdash;
-- [ ] documentation &mdash;
+- [x] live capturing
+- [ ] documentation
 - [ ] {enhancements}
 
 These are just the initial goals. Once they're accomplished, we'll be moving on to much more interesting and hacking-related stuff.
