@@ -62,18 +62,18 @@ public class Extractor {
         pcap.loop(count, packetHandler, Sea.packets);
         pcap.close();
 
-        // view
-        Projector projector=new Projector(Sea.packets);
-        projector.setFilters();
-        projector.showFiltered();
-
-        // view stats
-        Sea.count_http.setText(n_http+"");
-        Sea.count_tcp.setText(n_tcp_other+"");
-        Sea.count_udp.setText(n_udp+"");
-        Sea.size_http.setText(s_http+"");
-        Sea.size_tcp.setText(s_tcp_other+"");
-        Sea.size_udp.setText(s_udp+"");
+//        // view
+//        Projector projector=new Projector(Sea.packets);
+//        projector.setFilters();
+//        projector.showFiltered();
+//
+//        // view stats
+//        Sea.count_http.setText(n_http+"");
+//        Sea.count_tcp.setText(n_tcp_other+"");
+//        Sea.count_udp.setText(n_udp+"");
+//        Sea.size_http.setText(s_http+"");
+//        Sea.size_tcp.setText(s_tcp_other+"");
+//        Sea.size_udp.setText(s_udp+"");
     }
 
     int n_packets_all=0, n_http=0, n_tcp_other=0, n_udp=0, n_packets_unknown=0,
@@ -113,6 +113,8 @@ public class Extractor {
                     n_udp++;
                     s_udp+=size;
                 }
+
+//                System.out.println(packet.toString());
 
                 Sea.packets.add(Sea.packets.size(), packet);
             } else {

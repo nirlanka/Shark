@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import org.jnetpcap.Pcap;
 import org.jnetpcap.PcapIf;
@@ -52,4 +53,11 @@ public class Sea {
     public static List<PcapIf> devices;
 
     public static Thread thread;
+
+    public static void setDevices(List<PcapIf> _devices) {
+        devices=_devices;
+    }
+    public static void setDeviceList(ObservableList<String> _devs) {
+        lst_interfaces.setItems(_devs);
+    }
 }

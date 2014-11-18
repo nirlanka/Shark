@@ -14,6 +14,27 @@ public class Reader {
                 Sea.lbl_status_open.setStyle("-fx-background-color: #5d8");
                 Sea.lbl_status_open.setText("Loading file...");
                 new Extractor(getPcap(Sea.txt_file.getText()));
+
+                // view
+                Projector projector=new Projector(Sea.packets);
+                projector.setFilters();
+                projector.showFiltered();
+
+                // view stats
+                Sea.count_http.setText("");
+                Sea.count_tcp.setText("");
+                Sea.count_udp.setText("");
+                Sea.size_http.setText("");
+                Sea.size_tcp.setText("");
+                Sea.size_udp.setText("");
+
+//                Sea.count_http.setText(n_http+"");
+//                Sea.count_tcp.setText(n_tcp_other+"");
+//                Sea.count_udp.setText(n_udp+"");
+//                Sea.size_http.setText(s_http+"");
+//                Sea.size_tcp.setText(s_tcp_other+"");
+//                Sea.size_udp.setText(s_udp+"");
+
                 Sea.lbl_status_open.setText("Completed opening file");
                 Sea.lbl_status_open.setStyle("-fx-background-color: #f5b");
             } catch (NullPointerException e) {

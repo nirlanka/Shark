@@ -26,7 +26,8 @@ public class Live {
             //[]// show errors
         }
 
-        Sea.devices=alldevs;
+        Sea.devices=alldevs; // implement on Sea
+//        Sea.setDevices(alldevs);
 
         int i = 0;
         for (PcapIf device : alldevs) {
@@ -38,7 +39,8 @@ public class Live {
             i++;
         }
 
-        Sea.lst_interfaces.setItems(devs);
+        Sea.lst_interfaces.setItems(devs); // implement on Sea
+//        Sea.setDeviceList(devs);
 
         //[]// show 'done'
     }
@@ -55,12 +57,13 @@ public class Live {
         Pcap pcap =
                 Pcap.openLive(device.getName(), snaplen, flags, timeout, errbuf);
 
+//        return new CaptureThread(pcap);
         Sea.thread=new Thread(new CaptureThread(pcap));
         Sea.thread.start();
 
-//        Extractor ex=new Extractor(pcap);
+////        Extractor ex=new Extractor(pcap);
 
-        System.out.println(device.getName());
+//        System.out.println(device.getName());
     }
 
     private class CaptureThread implements Runnable {

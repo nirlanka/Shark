@@ -46,6 +46,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // test
 //        txt_file.setText(Sea.filename);
+        btn_stop.setDisable(true);
 
         // expose ui components
         Sea.col_source=col_source;
@@ -134,10 +135,16 @@ public class Controller implements Initializable {
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
                 live.capturePackets(str.split(":")[0].split("#")[1]);
 
+                // view
+                Projector projector=new Projector(Sea.packets);
+                projector.setFilters();
+                projector.showFiltered();
+
                 // temp: use count int file-reader
                 txt_count.setText(txt_count_cap.getText());
                 chk_count.setSelected(chk_count_cap.isSelected());
 
+                btn_stop.setDisable(false);
                 btn_start.setDisable(true);
                 lst_interfaces.setDisable(true);
                 chk_count.setDisable(true);
@@ -154,7 +161,21 @@ public class Controller implements Initializable {
                 } catch (InterruptedException e) {
 //                    e.printStackTrace();
                     System.out.println("//");
+                } finally {
+                    //view
+                    Projector projector=new Projector(Sea.packets);
+                    projector.setFilters();
+                    projector.showFiltered();
+
+                    // view stats
+                    Sea.count_http.setText("");
+                    Sea.count_tcp.setText("");
+                    Sea.count_udp.setText("");
+                    Sea.size_http.setText("");
+                    Sea.size_tcp.setText("");
+                    Sea.size_udp.setText("");
                 }
+
                 btn_start.setDisable(false);
                 lst_interfaces.setDisable(false);
                 chk_count.setDisable(false);
@@ -164,4 +185,5 @@ public class Controller implements Initializable {
 
         //[]// clear --> no auto refresh [but prompt to apply]
     }
+
 }
