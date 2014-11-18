@@ -106,8 +106,13 @@
           <file leaf-file-name="Reader.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Reader.java">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state vertical-scroll-proportion="0.78431374" vertical-offset="72" max-vertical-offset="708">
                   <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+=======
+                <state vertical-scroll-proportion="0.2994924" vertical-offset="3" max-vertical-offset="708">
+                  <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+>>>>>>> origin/master
                   <folding />
                 </state>
               </provider>
@@ -155,8 +160,13 @@
           <file leaf-file-name="Controller.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="2052">
                   <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+=======
+                <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2052">
+                  <caret line="152" column="28" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
+>>>>>>> origin/master
                   <folding>
                     <element signature="e#4461#4630#0" expanded="true" />
                     <element signature="e#4619#4620#0" expanded="true" />
@@ -167,11 +177,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Extractor.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="TextInputControl.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="jar://C:/Apps/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.33333334" vertical-offset="2335" max-vertical-offset="13800">
+                  <caret line="281" column="22" selection-start-line="281" selection-start-column="22" selection-end-line="281" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Extractor.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Extractor.java">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state vertical-scroll-proportion="0.375" vertical-offset="408" max-vertical-offset="1608">
                   <caret line="63" column="99" selection-start-line="63" selection-start-column="99" selection-end-line="63" selection-end-column="99" />
+=======
+                <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1596">
+                  <caret line="122" column="27" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="27" />
+>>>>>>> origin/master
                   <folding />
                 </state>
               </provider>
@@ -204,7 +229,10 @@
         <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/Sea.java" />
         <option value="$PROJECT_DIR$/src/Reader.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Extractor.java" />
+=======
+>>>>>>> origin/master
       </list>
     </option>
   </component>
@@ -570,7 +598,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08199122" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.193265" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38726208" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1024,6 +1056,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
@@ -1040,6 +1073,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
@@ -1048,6 +1083,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="2052">
@@ -1071,21 +1107,67 @@
             <element signature="e#2154#2155#0" expanded="true" />
             <element signature="e#2200#2201#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reader.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Projector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78431374" vertical-offset="72" max-vertical-offset="708">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1428">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Extractor.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1596">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="27" />
+          <folding />
+>>>>>>> origin/master
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.78431374" vertical-offset="72" max-vertical-offset="708">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.375" vertical-offset="408" max-vertical-offset="1608">
           <caret line="63" column="99" selection-start-line="63" selection-start-column="99" selection-end-line="63" selection-end-column="99" />
+=======
+        <state vertical-scroll-proportion="0.2994924" vertical-offset="3" max-vertical-offset="708">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2052">
+          <caret line="152" column="28" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
+          <folding>
+            <element signature="e#4461#4630#0" expanded="true" />
+            <element signature="e#4619#4620#0" expanded="true" />
+            <element signature="e#5591#6760#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Apps/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2335" max-vertical-offset="13800">
+          <caret line="281" column="22" selection-start-line="281" selection-start-column="22" selection-end-line="281" selection-end-column="22" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
