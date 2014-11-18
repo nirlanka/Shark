@@ -13,7 +13,11 @@ public class Reader {
             try {
                 Sea.lbl_status_open.setStyle("-fx-background-color: #5d8");
                 Sea.lbl_status_open.setText("Loading file...");
-                new Extractor(getPcap(Sea.txt_file.getText()), Integer.parseInt(Sea.txt_count.getText()));
+                new Extractor(getPcap(Sea.txt_file.getText()),
+                        (Sea.txt_count.equals(""))
+                        ? Sea.max_count
+                        : Integer.parseInt(Sea.txt_count.getText())
+                );
 
                 // view
                 Projector projector=new Projector(Sea.packets);
