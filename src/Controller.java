@@ -133,19 +133,32 @@ public class Controller implements Initializable {
             public void handle(ActionEvent event) {
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
                 live.capturePackets(str.split(":")[0].split("#")[1]);
+
+                // temp: use count int file-reader
+                txt_count.setText(txt_count_cap.getText());
+                chk_count.setSelected(chk_count_cap.isSelected());
+
+                btn_start.setDisable(true);
+                lst_interfaces.setDisable(true);
+                chk_count.setDisable(true);
+                txt_count_cap.setDisable(true);
             }
         });
         btn_stop.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Sea.pcap.breakloop();
-                System.out.println("Sea.pcap.breakloop()");
+//                System.out.println("Sea.pcap.breakloop()");
                 try {
                     Sea.thread.join();
                 } catch (InterruptedException e) {
 //                    e.printStackTrace();
                     System.out.println("//");
                 }
+                btn_start.setDisable(false);
+                lst_interfaces.setDisable(false);
+                chk_count.setDisable(false);
+                txt_count_cap.setDisable(false);
             }
         });
 

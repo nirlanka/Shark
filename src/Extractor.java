@@ -1,5 +1,8 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.jnetpcap.Pcap;
 import org.jnetpcap.PcapHeader;
+import org.jnetpcap.PcapIf;
 import org.jnetpcap.packet.PcapPacket;
 import org.jnetpcap.packet.PcapPacketHandler;
 import org.jnetpcap.packet.format.FormatUtils;
@@ -9,11 +12,42 @@ import org.jnetpcap.protocol.tcpip.Tcp;
 import org.jnetpcap.protocol.tcpip.Udp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Nirmal on 16/11/2014.
  */
 public class Extractor {
+
+    void getInterfaces() {
+
+        final ObservableList<String> devs =
+                FXCollections.observableArrayList();
+
+        List<PcapIf> alldevs = new ArrayList<PcapIf>();
+        StringBuilder errbuf = new StringBuilder();
+
+        int r = Pcap.findAllDevs(alldevs, errbuf);
+        if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
+            System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
+            return;
+            //[]// show errors
+        }
+
+        int i = 0;
+        for (PcapIf device : alldevs) {
+            devs.add("#"+(i-1)+": "+
+                            ((device.getDescription() != null)
+                                    ? device.getDescription()
+                                    : device.getName())
+            );
+        }
+
+        Sea.lst_interfaces.setItems(devs);
+
+        //[]// show 'done'
+    }
+
     public Extractor(Pcap pcap) {
 
         int count=Sea.max_count, user_count=0;
@@ -21,6 +55,8 @@ public class Extractor {
             user_count=Integer.parseInt(Sea.txt_count.getText());
         if (Sea.chk_count.isSelected() && count>user_count)
             count=user_count;
+
+//        n_packets_all=Sea.txt
 
         Sea.packets.clear();
         pcap.loop(count, packetHandler, Sea.packets);
