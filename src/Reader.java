@@ -32,6 +32,7 @@ public class Reader {
 //                Sea.size_tcp.setText("");
 //                Sea.size_udp.setText("");
 
+                // view stats
                 Sea.count_http.setText(Sea.n_http+"");
                 Sea.count_tcp.setText(Sea.n_tcp_other+"");
                 Sea.count_udp.setText(Sea.n_udp+"");

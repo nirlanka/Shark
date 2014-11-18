@@ -177,12 +177,12 @@ public class Controller implements Initializable {
                     projector.showFiltered();
 
                     // view stats
-                    Sea.count_http.setText("");
-                    Sea.count_tcp.setText("");
-                    Sea.count_udp.setText("");
-                    Sea.size_http.setText("");
-                    Sea.size_tcp.setText("");
-                    Sea.size_udp.setText("");
+                    Sea.count_http.setText(Sea.n_http+"");
+                    Sea.count_tcp.setText(Sea.n_tcp_other+"");
+                    Sea.count_udp.setText(Sea.n_udp+"");
+                    Sea.size_http.setText(Sea.s_http+"");
+                    Sea.size_tcp.setText(Sea.s_tcp_other+"");
+                    Sea.size_udp.setText(Sea.s_udp+"");
                 }
 
                 btn_start.setDisable(false);
