@@ -53,11 +53,20 @@ public class Sea {
     public static List<PcapIf> devices;
 
     public static Thread thread;
+    public static Button btn_stop;
+    public static Button btn_start;
+    public static Label lbl_status_open_cap;
 
     public static void setDevices(List<PcapIf> _devices) {
         devices=_devices;
     }
     public static void setDeviceList(ObservableList<String> _devs) {
         lst_interfaces.setItems(_devs);
+    }
+
+    static int capCount=0;
+    public static void printCapCountUp() {
+        capCount++;
+//        lbl_status_open_cap.setText(capCount+"");
     }
 }

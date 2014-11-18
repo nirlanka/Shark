@@ -75,7 +75,7 @@ public class Live {
 
         @Override
         public void run() {
-            /*Extractor ex=*/new Extractor(pcap);
+            /*Extractor ex=*/new Extractor(pcap, Sea.max_count);
             System.out.println("DONE: new Extractor(pcap)");
         }
     }

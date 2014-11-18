@@ -48,7 +48,9 @@ public class Extractor {
         //[]// show 'done'
     }
 
-    public Extractor(Pcap pcap) {
+    int COUNT;
+    public Extractor(Pcap pcap, int _COUNT) {
+        COUNT=_COUNT;
 
         int count=Sea.max_count, user_count=0;
         if (!Sea.txt_count.getText().equals(""))
@@ -89,6 +91,8 @@ public class Extractor {
         @Override
         public void nextPacket(PcapPacket pcapPacket, ArrayList arrayList) {
 
+            Sea.printCapCountUp();
+
             if (pcapPacket.hasHeader(ip)) {
 
                 Packet packet=new Packet();
@@ -124,6 +128,14 @@ public class Extractor {
 
             n_packets_all++;
 //            s_packets_all+=size;
+
+            if (n_packets_all>=COUNT)
+                try {
+                    Sea.pcap.breakloop();
+                    System.out.println("COUNT");
+                } catch (org.jnetpcap.PcapClosedException e) {
+                    System.out.println(":p");
+                }
         }
     };
 }

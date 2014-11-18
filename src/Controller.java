@@ -41,12 +41,16 @@ public class Controller implements Initializable {
     public CheckBox chk_count_cap;
     public Label lbl_status_open_cap;
 
+    Live live=new Live();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // test
 //        txt_file.setText(Sea.filename);
         btn_stop.setDisable(true);
+        txt_count_cap.setDisable(true);
+        chk_count_cap.setDisable(true);
 
         // expose ui components
         Sea.col_source=col_source;
@@ -75,8 +79,11 @@ public class Controller implements Initializable {
 
         Sea.lst_interfaces=lst_interfaces;
         Sea.btn_get_interfaces=btn_get_interfaces;
-//        Sea.btn_stop;
-//        Sea.btn_start=btn_start;
+        Sea.btn_stop=btn_stop;
+        Sea.btn_start=btn_start;
+
+        Sea.lbl_status_open_cap=lbl_status_open_cap;
+
 
         // table cell value factories
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
@@ -84,7 +91,7 @@ public class Controller implements Initializable {
         col_size.setCellValueFactory(new PropertyValueFactory<Packet, Integer>("size"));
         col_type.setCellValueFactory(new PropertyValueFactory<Packet, String>("type"));
 
-        final Live live=new Live();
+//        final
 
         // assign triggers & events
 
@@ -132,6 +139,8 @@ public class Controller implements Initializable {
         btn_start.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                live=new Live();
+
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
                 live.capturePackets(str.split(":")[0].split("#")[1]);
 
