@@ -14,11 +14,7 @@ public class Reader {
                 Sea.lbl_status_open.setStyle("-fx-background-color: #5d8");
                 Sea.lbl_status_open.setText("Loading file...");
                 new Extractor(getPcap(Sea.txt_file.getText()),
-<<<<<<< HEAD
                         (Sea.txt_count.getText().equals(""))
-=======
-                        (Sea.txt_count.equals(""))
->>>>>>> origin/master
                         ? Sea.max_count
                         : Integer.parseInt(Sea.txt_count.getText())
                 );
