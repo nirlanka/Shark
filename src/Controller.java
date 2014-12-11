@@ -15,6 +15,8 @@ public class Controller implements Initializable {
     public TableColumn<Packet, String> col_destination;
     public TableColumn<Packet, Integer> col_size;
     public TableColumn<Packet, String> col_type;
+    public TableColumn<Packet, String> col_sourceport;
+    public TableColumn<Packet, String> col_destport;
     public TextField txt_file;
     public Button btn_open;
     public TableView table_packets;
@@ -40,6 +42,7 @@ public class Controller implements Initializable {
     public TextField txt_count_cap;
     public CheckBox chk_count_cap;
     public Label lbl_status_open_cap;
+    public Button btnHelp;
 
     Live live=new Live();
 
@@ -58,6 +61,8 @@ public class Controller implements Initializable {
         Sea.txt_file=txt_file;
         Sea.col_size=col_size;
         Sea.col_type=col_type;
+        Sea.col_destport=col_destport;
+        Sea.col_sourceport=col_sourceport;
         Sea.table_packets=table_packets;
         Sea.txt_filters=txt_filters;
 //        Sea.btn_filter=btn_filter;
@@ -90,6 +95,8 @@ public class Controller implements Initializable {
         col_destination.setCellValueFactory(new PropertyValueFactory<Packet, String>("destination"));
         col_size.setCellValueFactory(new PropertyValueFactory<Packet, Integer>("size"));
         col_type.setCellValueFactory(new PropertyValueFactory<Packet, String>("type"));
+        col_sourceport.setCellValueFactory(new PropertyValueFactory<Packet, String>("sourceport"));
+        col_destport.setCellValueFactory(new PropertyValueFactory<Packet, String>("destport"));
 
 //        final
 
@@ -191,6 +198,10 @@ public class Controller implements Initializable {
                 txt_count_cap.setDisable(false);
             }
         });
+
+        final Tooltip filterHelp=new Tooltip();
+        filterHelp.setText("Some text");
+        btnHelp.setTooltip(filterHelp);
 
         //[]// clear --> no auto refresh [but prompt to apply]
     }

@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" prefHeight="461.0" prefWidth="881.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -18,33 +18,37 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="394.0" prefWidth="686.0">
+      <AnchorPane prefHeight="482.0" prefWidth="870.0">
          <children>
-            <TableView fx:id="table_packets" layoutX="7.0" layoutY="6.0" prefHeight="381.0" prefWidth="388.0">
+            <TableView fx:id="table_packets" layoutX="1.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0">
               <columns>
                 <!--<TableColumn fx:id="col_time" prefWidth="42.0" />-->
-                <TableColumn fx:id="col_source" prefWidth="92.0" text="Source" />
-                  <TableColumn fx:id="col_destination" prefWidth="91.0" text="Destination" />
-                  <TableColumn fx:id="col_size" prefWidth="75.0" text="Size" />
-                  <TableColumn fx:id="col_type" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="col_source" prefWidth="137.0" text="Source" />
+                  <TableColumn fx:id="col_sourceport" prefWidth="78.0" text="port" />
+                  <TableColumn fx:id="col_destination" prefWidth="122.0" text="Destination" />
+                  <TableColumn fx:id="col_destport" prefWidth="59.0" text="port" />
+                  <TableColumn fx:id="col_size" prefWidth="71.0" text="Size" />
+                  <TableColumn fx:id="col_type" prefWidth="90.0" text="Type" />
+
+
               </columns>
             </TableView>
-            <Accordion layoutX="402.0" layoutY="6.0" prefHeight="381.0" prefWidth="278.0">
+            <Accordion layoutX="592.0" layoutY="6.0" prefHeight="448.0" prefWidth="278.0">
               <panes>
                   <TitledPane text="Capture"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ListView fx:id="lst_interfaces" layoutX="14.0" layoutY="73.0" prefHeight="124.0" prefWidth="248.0" />
-                              <Button fx:id="btn_start" layoutX="77.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Start" />
+                              <ListView fx:id="lst_interfaces" layoutX="15.0" layoutY="73.0" prefHeight="124.0" prefWidth="248.0" />
+                              <Button fx:id="btn_start" defaultButton="true" layoutX="77.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Start" />
                               <Button fx:id="btn_stop" layoutX="141.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Stop" />
-                              <TextField fx:id="txt_count_cap" layoutX="35.0" layoutY="41.0" prefHeight="25.0" prefWidth="116.0" promptText="number of packets" />
+                              <TextField fx:id="txt_count_cap" layoutX="35.0" layoutY="41.0" prefHeight="25.0" prefWidth="109.0" promptText="number of packets" />
                               <CheckBox fx:id="chk_count_cap" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" selected="true" />
                               <Label fx:id="lbl_status_open_cap" alignment="CENTER" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btn_get_interfaces" layoutX="173.0" layoutY="41.0" mnemonicParsing="false" text="Get interfaces" />
+                              <Button fx:id="btn_get_interfaces" layoutX="149.0" layoutY="41.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Get interfaces" />
                            </children>
                       </AnchorPane>
                   </content></TitledPane>
@@ -53,7 +57,7 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <TextField fx:id="txt_file" layoutX="14.0" layoutY="73.0" prefHeight="25.0" prefWidth="248.0" promptText="/path/file.*cap" />
-                              <Button fx:id="btn_open" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" text="Open" />
+                              <Button fx:id="btn_open" defaultButton="true" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" text="Open" />
                               <Label fx:id="lbl_status_open" alignment="CENTER" layoutX="-1.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
@@ -69,15 +73,17 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea fx:id="txt_filters" layoutX="14.0" layoutY="64.0" prefHeight="76.0" prefWidth="253.0" promptText="terms" />
-                              <Button fx:id="btn_filter" layoutX="74.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
+                              <TextArea fx:id="txt_filters" layoutX="14.0" layoutY="64.0" prefHeight="97.0" prefWidth="253.0" promptText="terms" />
+                              <Button fx:id="btn_filter" defaultButton="true" layoutX="74.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
                               <CheckBox fx:id="chk_filter" layoutX="16.0" layoutY="38.0" mnemonicParsing="false" selected="true" text="Filter" />
-                              <Button fx:id="btn_filter_clear" layoutX="146.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                              <Button fx:id="btn_filter_clear" layoutX="146.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
                               <Label fx:id="lbl_status_filtered_stats1" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
+                              <Button layoutX="241.0" layoutY="35.0" mnemonicParsing="false" text="?" />
+                              <Accordion layoutX="16.0" layoutY="229.0" />
                            </children></AnchorPane>
                   </content>
                 </TitledPane>

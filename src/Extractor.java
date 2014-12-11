@@ -105,15 +105,22 @@ public class Extractor {
                 packet.setSize(size);
                 if (pcapPacket.hasHeader(tcp)) {
                     if (pcapPacket.hasHeader(http)) {
+
+                        packet.setSourceport(tcp.source());
+                        packet.setDestport(tcp.destination());
                         packet.setType(Sea.HTTP);
                         Sea.n_http++;
                         Sea.s_http+=size;
                     } else {
+                        packet.setSourceport(tcp.source());
+                        packet.setDestport(tcp.destination());
                         packet.setType(Sea.TCP);
                         Sea.n_tcp_other++;
                         Sea.s_tcp_other+=size;
                     }
                 } else if (pcapPacket.hasHeader(udp)) {
+                    packet.setSourceport(udp.source());
+                    packet.setDestport(udp.destination());
                     packet.setType(Sea.UDP);
                     Sea.n_udp++;
                     Sea.s_udp+=size;
@@ -122,9 +129,20 @@ public class Extractor {
 //                System.out.println(packet.toString());
 
                 Sea.packets.add(Sea.packets.size(), packet);
+
             } else {
                 Sea.n_packets_unknown++;
 //                s_packets_unknown+=size;
+
+                /* #AllTypes */
+                Packet packet=new Packet();
+
+                PcapHeader header=pcapPacket.getCaptureHeader();
+                int size=header.wirelen();
+                packet.setSize(size);
+                Sea.s_non_ip+=size;
+
+                Sea.packets.add(Sea.packets.size(), packet);
             }
 
             Sea.n_packets_all++;

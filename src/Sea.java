@@ -13,7 +13,7 @@ public class Sea {
 
     public static ArrayList<Packet> packets=new ArrayList<Packet>();
 
-    public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
+   // public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
 
     public static int max_count = 4999;//Pcap.LOOP_INFINITE;
 
@@ -26,6 +26,8 @@ public class Sea {
     public static TextField txt_file;
     public static TableColumn col_size;
     public static TableColumn col_type;
+    public static TableColumn col_destport;
+    public static TableColumn col_sourceport;
     public static TableView table_packets;
     public static TextArea txt_filters;
 //    public static Button btn_filter;
@@ -59,6 +61,8 @@ public class Sea {
 
     static int n_packets_all=0, n_http=0, n_tcp_other=0, n_udp=0, n_packets_unknown=0,
     /*s_packets_all=0,*/ s_http=0, s_tcp_other=0, s_udp=0/*, s_packets_unknown=0*/;
+
+    static int n_non_ip=0, s_non_ip=0;
 
     public static void setDevices(List<PcapIf> _devices) {
         devices=_devices;
