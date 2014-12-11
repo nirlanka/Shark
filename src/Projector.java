@@ -106,8 +106,10 @@ public class Projector {
                 filters.add(filters.size(), tmp+"-dest");
             }
 
-        if (!(tmp=Sea.to_txtPort.getText()).equals(""))
-            filters.add(filters.size(), ":"+tmp+":dest");
+        if (!(tmp=Sea.to_txtPort.getText()).equals("")) {
+            filters.add(filters.size(), ":" + tmp + ":dest");
+//            System.out.println(":" + tmp + ":dest");
+        }
 
         // size 1
 
@@ -136,7 +138,7 @@ public class Projector {
         // types
 
         if (!Sea.type_cmb.getValue().equals(Sea.type_cmb.getItems().get(Sea.type_cmb.getItems().size()-1)))
-            filters.add(filters.size(), ""+Sea.type_cmb.getValue().toString().toLowerCase());
+            filters.add(filters.size(), "" + Sea.type_cmb.getValue().toString().toLowerCase());
 
     }
 

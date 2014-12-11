@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_shark" default="compile.module.shark">
+  <dirname property="module.shark.basedir" file="${ant.file.module_shark}"/>
+  
+  <property name="module.jdk.home.shark" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.shark" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.shark" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.shark" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="shark.output.dir" value="${module.shark.basedir}/out/production/Shark"/>
+  <property name="shark.testoutput.dir" value="${module.shark.basedir}/out/test/Shark"/>
+  
+  <path id="shark.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="shark.module.production.classpath">
+    <path refid="${module.jdk.classpath.shark}"/>
+    <path refid="library.jnetpcap.classpath"/>
+  </path>
+  
+  <path id="shark.runtime.production.module.classpath">
+    <pathelement location="${shark.output.dir}"/>
+    <path refid="library.jnetpcap.classpath"/>
+  </path>
+  
+  <path id="shark.module.classpath">
+    <path refid="${module.jdk.classpath.shark}"/>
+    <pathelement location="${shark.output.dir}"/>
+    <path refid="library.jnetpcap.classpath"/>
+  </path>
+  
+  <path id="shark.runtime.module.classpath">
+    <pathelement location="${shark.testoutput.dir}"/>
+    <pathelement location="${shark.output.dir}"/>
+    <path refid="library.jnetpcap.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.shark">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.shark">
+    <patternset refid="excluded.from.module.shark"/>
+  </patternset>
+  
+  <path id="shark.module.sourcepath">
+    <dirset dir="${module.shark.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.shark" depends="compile.module.shark.production,compile.module.shark.tests" description="Compile module Shark"/>
+  
+  <target name="compile.module.shark.production" depends="register.custom.compilers" description="Compile module Shark; production classes">
+    <mkdir dir="${shark.output.dir}"/>
+    <javac2 destdir="${shark.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.shark}/javac">
+      <compilerarg line="${compiler.args.shark}"/>
+      <bootclasspath refid="shark.module.bootclasspath"/>
+      <classpath refid="shark.module.production.classpath"/>
+      <src refid="shark.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.shark"/>
+    </javac2>
+    
+    <copy todir="${shark.output.dir}">
+      <fileset dir="${module.shark.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.shark.tests" depends="register.custom.compilers,compile.module.shark.production" description="compile module Shark; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.shark" description="cleanup module">
+    <delete dir="${shark.output.dir}"/>
+    <delete dir="${shark.testoutput.dir}"/>
+  </target>
+</project>

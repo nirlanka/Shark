@@ -287,11 +287,11 @@ public class Controller implements Initializable {
             }
         });
 
-        final Tooltip filterHelp=new Tooltip();
-        filterHelp.setText("Some text");
-        btnHelp.setTooltip(filterHelp);
+//        final Tooltip filterHelp=new Tooltip();
+//        filterHelp.setText("Some text");
+//        btnHelp.setTooltip(filterHelp);
 
-        //[]// clear --> no auto refresh [but prompt to apply]
+        //[ok?]// clear --> no auto refresh [but prompt to apply]
     }
 
 }

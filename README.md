@@ -8,7 +8,7 @@ Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Win
 
 Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 
-![ A screenshot of Shark ](content/screenshot-1.png)
+![ A screenshot of Shark ](content/screenshot-2.png)
 
 ### (planned) development milestones or **features**
 
