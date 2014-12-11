@@ -48,12 +48,12 @@ public class Packet {
     @Override
     public String toString() {
         return   "from="+getSource()+"-src" + ":"+getDestport()+":src"
-                +"to="+getDestination()+"-dest" + ":="+getSourceport()+":dest"
+                +"to="+getDestination()+"-dest" + ":"+getSourceport()+":dest"
                 +"size="+getSize()
                 + "prot="+getType().toLowerCase()
-
+/*
                 +"from="+getSource()+":"+getSourceport()+"-src"
-                +"to="+getDestination()+":"+getDestport()+"-dest"
+                +"to="+getDestination()+":"+getDestport()+"-dest"*/
         ;
     }
 }

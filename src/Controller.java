@@ -1,3 +1,5 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -43,6 +45,17 @@ public class Controller implements Initializable {
     public CheckBox chk_count_cap;
     public Label lbl_status_open_cap;
     public Button btnHelp;
+    public TextField from_txtIP;
+    public TextField from_txtPort;
+    public CheckBox from_chkEnd;
+    public CheckBox to_chkEnd;
+    public TextField to_txtPort;
+    public TextField to_txtIP;
+    public ComboBox<String> type_cmb;
+    public ComboBox size1_cmbRelation;
+    public TextField size1_txtValue;
+    public TextField size2_txtValue;
+    public ComboBox size2_cmbRelation;
 
     Live live=new Live();
 
@@ -54,6 +67,10 @@ public class Controller implements Initializable {
         btn_stop.setDisable(true);
         txt_count_cap.setDisable(true);
         chk_count_cap.setDisable(true);
+
+        // temp
+        btnHelp.setVisible(false);
+        txt_filters.setVisible(false);
 
         // expose ui components
         Sea.col_source=col_source;
@@ -75,7 +92,7 @@ public class Controller implements Initializable {
         Sea.count_udp=count_udp;
         Sea.size_http=size_http;
         Sea.size_tcp=size_tcp;
-        Sea.size_udp=size_tcp;
+        Sea.size_udp=size_udp;
         Sea.lbl_status_filtered_stats=lbl_status_filtered_stats;
         Sea.lbl_status_filtered_stats1=lbl_status_filtered_stats1;
 
@@ -88,6 +105,38 @@ public class Controller implements Initializable {
         Sea.btn_start=btn_start;
 
         Sea.lbl_status_open_cap=lbl_status_open_cap;
+
+            // expose: filters gui
+
+        Sea.from_chkEnd=from_chkEnd;
+        Sea.from_txtIP=from_txtIP;
+        Sea.from_txtPort=from_txtPort;
+
+        Sea.to_chkEnd=to_chkEnd;
+        Sea.to_txtIP=to_txtIP;
+        Sea.to_txtPort=to_txtPort;
+
+        Sea.type_cmb=type_cmb;
+
+        Sea.size1_cmbRelation=size1_cmbRelation;
+        Sea.size1_txtValue=size1_txtValue;
+
+        Sea.size2_cmbRelation=size2_cmbRelation;
+        Sea.size2_txtValue=size2_txtValue;
+
+            // initialize: filters gui
+
+        final ObservableList<String> types= FXCollections.observableArrayList();
+        types.add(Sea.HTTP); types.add(Sea.TCP); types.add(Sea.UDP); types.add(Sea.Unknown); types.add("Any");
+        type_cmb.setItems(types);
+            type_cmb.setValue(types.get(types.size()-1));
+
+        final ObservableList<String> relations= FXCollections.observableArrayList();
+        relations.add("="); relations.add(">="); relations.add("<=");
+        size1_cmbRelation.setItems(relations);
+            size1_cmbRelation.setValue(relations.get(1));
+        size2_cmbRelation.setItems(relations);
+            size2_cmbRelation.setValue(relations.get(2));
 
 
         // table cell value factories
@@ -108,15 +157,35 @@ public class Controller implements Initializable {
                 new Reader();
             }
         });
-        btn_filter.setOnAction(new EventHandler<ActionEvent>() {
+
+
+        EventHandler<ActionEvent> filter_command=new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Projector proj=new Projector(Sea.packets);
                 proj.setFilters();
                 proj.showFiltered();
-                btn_filter.setDisable(true);
+//                btn_filter.setDisable(true);
             }
-        });
+        };
+
+        btn_filter.setOnAction(filter_command);
+
+        from_chkEnd.setOnAction(filter_command);
+        to_chkEnd.setOnAction(filter_command);
+        type_cmb.setOnAction(filter_command);
+        size1_cmbRelation.setOnAction(filter_command);
+        size2_cmbRelation.setOnAction(filter_command);
+        // not working:
+//        from_txtIP.setOnAction(filter_command);
+//        from_txtPort.setOnAction(filter_command);
+//        to_txtIP.setOnAction(filter_command);
+//        to_txtPort.setOnAction(filter_command);
+//        size1_txtValue.setOnAction(filter_command);
+//        size2_txtValue.setOnAction(filter_command);
+//        chk_filter.setOnAction(filter_command);
+
+
         txt_filters.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -129,11 +198,19 @@ public class Controller implements Initializable {
                 btn_filter.setDisable(false);
             }
         });
+
         btn_filter_clear.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                txt_filters.setText("");
-                btn_filter.setDisable(false);
+//                txt_filters.setText("");
+//                btn_filter.setDisable(false);
+                from_txtIP.setText(""); from_chkEnd.setSelected(false); from_txtPort.setText("");
+                to_txtIP.setText(""); to_chkEnd.setSelected(false); to_txtPort.setText("");
+                type_cmb.setValue(type_cmb.getItems().get(type_cmb.getItems().size()-1));
+                size1_cmbRelation.setValue(size1_cmbRelation.getItems().get(1));
+                    size1_txtValue.setText("");
+                size2_cmbRelation.setValue(size2_cmbRelation.getItems().get(2));
+                    size2_txtValue.setText("");
             }
         });
 

@@ -73,17 +73,36 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea fx:id="txt_filters" layoutX="14.0" layoutY="64.0" prefHeight="97.0" prefWidth="253.0" promptText="terms" />
-                              <Button fx:id="btn_filter" defaultButton="true" layoutX="74.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
-                              <CheckBox fx:id="chk_filter" layoutX="16.0" layoutY="38.0" mnemonicParsing="false" selected="true" text="Filter" />
-                              <Button fx:id="btn_filter_clear" layoutX="146.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Clear" />
+                              <TextArea fx:id="txt_filters" layoutX="12.0" layoutY="300.0" prefHeight="35.0" prefWidth="253.0" promptText="terms" />
+                              <Button fx:id="btn_filter" defaultButton="true" layoutX="72.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Apply" />
+                              <CheckBox fx:id="chk_filter" layoutX="16.0" layoutY="38.0" mnemonicParsing="false" selected="true" text="Apply filters" />
+                              <Button fx:id="btn_filter_clear" layoutX="144.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Reset" />
                               <Label fx:id="lbl_status_filtered_stats1" alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="241.0" layoutY="35.0" mnemonicParsing="false" text="?" />
-                              <Accordion layoutX="16.0" layoutY="229.0" />
+                              <Button fx:id="btnHelp" layoutX="238.0" layoutY="35.0" mnemonicParsing="false" text="?" />
+                              <Accordion layoutX="16.0" layoutY="246.0" />
+                              <Label layoutX="14.0" layoutY="101.0" prefHeight="17.0" prefWidth="35.0" text="from" />
+                              <TextField fx:id="from_txtIP" layoutX="49.0" layoutY="97.0" prefHeight="25.0" prefWidth="107.0" />
+                              <Label layoutX="161.0" layoutY="101.0" text=":" />
+                              <TextField fx:id="from_txtPort" layoutX="169.0" layoutY="97.0" prefHeight="25.0" prefWidth="91.0" />
+                              <CheckBox fx:id="from_chkEnd" layoutX="78.0" layoutY="76.0" mnemonicParsing="false" text="match end" />
+                              <CheckBox fx:id="to_chkEnd" layoutX="78.0" layoutY="156.0" mnemonicParsing="false" text="match end" />
+                              <TextField fx:id="to_txtPort" layoutX="169.0" layoutY="127.0" prefHeight="25.0" prefWidth="91.0" />
+                              <Label layoutX="161.0" layoutY="131.0" text=":" />
+                              <TextField fx:id="to_txtIP" layoutX="49.0" layoutY="127.0" prefHeight="25.0" prefWidth="107.0" />
+                              <Label layoutX="14.0" layoutY="131.0" prefHeight="17.0" prefWidth="35.0" text="to" />
+                              <Label layoutX="14.0" layoutY="190.0" text="type" />
+                              <ComboBox fx:id="type_cmb" layoutX="49.0" layoutY="186.0" prefHeight="25.0" prefWidth="212.0" />
+                              <Label layoutX="14.0" layoutY="224.0" text="size" />
+                              <ComboBox fx:id="size1_cmbRelation" layoutX="49.0" layoutY="220.0" prefHeight="25.0" prefWidth="70.0" />
+                              <TextField fx:id="size1_txtValue" layoutX="128.0" layoutY="220.0" prefHeight="25.0" prefWidth="134.0" />
+                              <TextField fx:id="size2_txtValue" layoutX="128.0" layoutY="250.0" prefHeight="25.0" prefWidth="134.0" />
+                              <ComboBox fx:id="size2_cmbRelation" layoutX="49.0" layoutY="250.0" prefHeight="25.0" prefWidth="70.0" />
+                              <Separator layoutX="16.0" layoutY="63.0" prefHeight="2.0" prefWidth="243.0" />
+                              <Separator layoutX="17.0" layoutY="295.0" prefHeight="2.0" prefWidth="243.0" />
                            </children></AnchorPane>
                   </content>
                 </TitledPane>

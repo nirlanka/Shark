@@ -63,7 +63,7 @@ public class Projector {
 
         String[] lines=Sea.txt_filters.getText().split("\n");
 
-        for (String line : lines) {
+        /*for (String line : lines) {
 
             String[] words=line.split(" ");
 
@@ -81,7 +81,63 @@ public class Projector {
                 }
             }
 
+        }*/
+
+        String tmp;
+
+        // from
+
+        if (!(tmp=Sea.from_txtIP.getText()).equals(""))
+            if (!Sea.from_chkEnd.isSelected()) {
+                filters.add(filters.size(), "from=" + tmp);
+            } else {
+                filters.add(filters.size(), tmp+"-src");
+            }
+
+        if (!(tmp=Sea.from_txtPort.getText()).equals(""))
+            filters.add(filters.size(), ":"+tmp+":src");
+
+        // to
+
+        if (!(tmp=Sea.to_txtIP.getText()).equals(""))
+            if (!Sea.to_chkEnd.isSelected()) {
+                filters.add(filters.size(), "to=" + tmp);
+            } else {
+                filters.add(filters.size(), tmp+"-dest");
+            }
+
+        if (!(tmp=Sea.to_txtPort.getText()).equals(""))
+            filters.add(filters.size(), ":"+tmp+":dest");
+
+        // size 1
+
+        if (!(tmp=Sea.size1_txtValue.getText()).equals("")) {
+            compareSize=true;
+            if (Sea.size1_cmbRelation.getValue().equals(Sea.size1_cmbRelation.getItems().get(1)))
+                greaterThan=Integer.parseInt(Sea.size1_txtValue.getText());
+            else if (Sea.size1_cmbRelation.getValue().equals(Sea.size1_cmbRelation.getItems().get(2)))
+                lowerThan=Integer.parseInt(Sea.size1_txtValue.getText());
+            else
+                filters.add(filters.size(), "size="+Sea.size1_txtValue.getText());
         }
+
+        // size 2
+
+        if (!(tmp=Sea.size2_txtValue.getText()).equals("")) {
+            compareSize=true;
+            if (Sea.size2_cmbRelation.getValue().equals(Sea.size2_cmbRelation.getItems().get(1)))
+                greaterThan=Integer.parseInt(Sea.size2_txtValue.getText());
+            else if (Sea.size2_cmbRelation.getValue().equals(Sea.size2_cmbRelation.getItems().get(2)))
+                lowerThan=Integer.parseInt(Sea.size2_txtValue.getText());
+            else
+                filters.add(filters.size(), "size="+Sea.size2_txtValue.getText());
+        }
+
+        // types
+
+        if (!Sea.type_cmb.getValue().equals(Sea.type_cmb.getItems().get(Sea.type_cmb.getItems().size()-1)))
+            filters.add(filters.size(), ""+Sea.type_cmb.getValue().toString().toLowerCase());
+
     }
 
     private boolean filterPacket(Packet packet) {
@@ -100,7 +156,7 @@ public class Projector {
         return true;
     }
 
-    static int getNumOfComparison(String word) {
+    /*static int getNumOfComparison(String word) {
         char[] __word=word.toCharArray();
         String num="";
         boolean passedComparator=false;
@@ -114,5 +170,5 @@ public class Projector {
         }
 
         return Integer.parseInt(num);
-    }
+    }*/
 }

@@ -63,6 +63,17 @@ public class Sea {
     /*s_packets_all=0,*/ s_http=0, s_tcp_other=0, s_udp=0/*, s_packets_unknown=0*/;
 
     static int n_non_ip=0, s_non_ip=0;
+    public static CheckBox from_chkEnd;
+    public static TextField from_txtIP;
+    public static TextField from_txtPort;
+    public static CheckBox to_chkEnd;
+    public static TextField to_txtIP;
+    public static TextField to_txtPort;
+    public static ComboBox type_cmb;
+    public static ComboBox size1_cmbRelation;
+    public static TextField size1_txtValue;
+    public static ComboBox size2_cmbRelation;
+    public static TextField size2_txtValue;
 
     public static void setDevices(List<PcapIf> _devices) {
         devices=_devices;
