@@ -224,6 +224,12 @@ public class Controller implements Initializable {
         btn_start.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                if (lst_interfaces.getSelectionModel().getSelectedItem()==null)
+                    return;
+
+                lbl_status_open_cap.setText("Capturing...");
+                lbl_status_open_cap.setStyle("-fx-background-color: #a4f");
+
                 live=new Live();
 
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
@@ -243,6 +249,7 @@ public class Controller implements Initializable {
                 lst_interfaces.setDisable(true);
                 chk_count.setDisable(true);
                 txt_count_cap.setDisable(true);
+
             }
         });
         btn_stop.setOnAction(new EventHandler<ActionEvent>() {
@@ -274,6 +281,9 @@ public class Controller implements Initializable {
                 lst_interfaces.setDisable(false);
                 chk_count.setDisable(false);
                 txt_count_cap.setDisable(false);
+
+                lbl_status_open_cap.setText("Stopped capturing");
+                lbl_status_open_cap.setStyle("-fx-background-color: #4cf");
             }
         });
 
