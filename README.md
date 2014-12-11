@@ -6,6 +6,8 @@ Packet capturing, analyzing and extraction of security related data in Java.
 
 Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1_
 
+Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
+
 ![ A screenshot of Shark ](content/screenshot-1.png)
 
 ### (planned) development milestones or **features**
