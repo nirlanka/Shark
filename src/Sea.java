@@ -15,10 +15,11 @@ public class Sea {
 
    // public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
 
-    public static int max_count = 4999;//Pcap.LOOP_INFINITE;
+    public static int max_count = 49999;//Pcap.LOOP_INFINITE;
 
     // types --> string
-    public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown";
+    public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown"
+            , ICMP="ICMP—tcp";
 
     // ui elements
     public static TableColumn col_source;

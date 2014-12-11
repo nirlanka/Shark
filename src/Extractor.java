@@ -6,6 +6,7 @@ import org.jnetpcap.PcapIf;
 import org.jnetpcap.packet.PcapPacket;
 import org.jnetpcap.packet.PcapPacketHandler;
 import org.jnetpcap.packet.format.FormatUtils;
+import org.jnetpcap.protocol.network.Icmp;
 import org.jnetpcap.protocol.network.Ip4;
 import org.jnetpcap.protocol.tcpip.Http;
 import org.jnetpcap.protocol.tcpip.Tcp;
@@ -88,6 +89,7 @@ public class Extractor {
         final Tcp tcp=new Tcp();
         final Http http=new Http();
         final Udp udp=new Udp();
+        final Icmp icmp=new Icmp();
 
         @Override
         public void nextPacket(PcapPacket pcapPacket, ArrayList arrayList) {
@@ -111,6 +113,13 @@ public class Extractor {
                         packet.setType(Sea.HTTP);
                         Sea.n_http++;
                         Sea.s_http+=size;
+                    } else if (pcapPacket.hasHeader(icmp)) {
+
+                        packet.setSourceport(tcp.source());
+                        packet.setDestport(tcp.destination());
+                        packet.setType(Sea.ICMP);
+//                        Sea.n_http++;
+//                        Sea.s_http+=size;
                     } else {
                         packet.setSourceport(tcp.source());
                         packet.setDestport(tcp.destination());
