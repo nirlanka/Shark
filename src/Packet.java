@@ -7,9 +7,11 @@ import javafx.beans.property.StringProperty;
  * Created by Nirmal on 16/11/2014.
  */
 public class Packet {
+    // fields (packet details)
     private final StringProperty source, destination, type, destport, sourceport ;
     private final IntegerProperty size;
 
+    // constructor
     public Packet(String source, String destination, int size, String type, String destport, String sourceport) {
         this.source = new SimpleStringProperty(source);
         this.destination = new SimpleStringProperty(destination);
@@ -19,6 +21,7 @@ public class Packet {
         this.sourceport = new SimpleStringProperty(sourceport);
     }
 
+    // empty (placeholder) constructor
     public Packet() {this("","",0,"","", "");}
 
     // setters
@@ -37,7 +40,7 @@ public class Packet {
     public String getDestport() {return this.destport.get();}
     public String getSourceport() {return this.sourceport.get();}
 
-    // as properties (getters)
+    // as properties (getters) (fx-related)
     public StringProperty sourceProperty() {return source;}
     public StringProperty destinationProperty() {return destination;}
     public IntegerProperty sizeProperty() {return size;}
@@ -45,6 +48,7 @@ public class Packet {
     public StringProperty destportProperty() {return destport;}
     public StringProperty sourceportProperty() {return sourceport;}
 
+    // return a string (for packet-filtering)
     @Override
     public String toString() {
         return   "from="+getSource()+"-src" + ":"+getSourceport()+":src"

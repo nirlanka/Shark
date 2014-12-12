@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    // access all relevent elements in the FX UI
     @FXML
     public TableColumn<Packet, String> col_source;
     public TableColumn<Packet, String> col_destination;
@@ -57,13 +59,14 @@ public class Controller implements Initializable {
     public TextField size2_txtValue;
     public ComboBox size2_cmbRelation;
 
+    // initialize new live capture
     Live live=new Live();
 
-
+    // initialize GUI and triggers
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        //temp
+        // temporarily disable/hide un-needed GUI elements
 
         btn_stop.setDisable(true);
         txt_count_cap.setDisable(true);
@@ -72,7 +75,10 @@ public class Controller implements Initializable {
         btnHelp.setVisible(false);
         txt_filters.setVisible(false);
 
-        // expose ui components
+        // expose GUI components to every part of the program
+        //  by statically assigning them to references in Sea class
+
+        // expose: table view
 
         Sea.col_source=col_source;
         Sea.col_destination=col_destination;
@@ -86,6 +92,8 @@ public class Controller implements Initializable {
         Sea.chk_filter=chk_filter;
         Sea.lbl_status_open=lbl_status_open;
 
+        // expose: statistics tab
+
         Sea.count_http=count_http;
         Sea.count_tcp=count_tcp;
         Sea.count_udp=count_udp;
@@ -95,6 +103,8 @@ public class Controller implements Initializable {
         Sea.lbl_status_filtered_stats=lbl_status_filtered_stats;
         Sea.lbl_status_filtered_stats1=lbl_status_filtered_stats1;
 
+        // expose: maximum number of packets for live-capturing
+
         Sea.txt_count=txt_count;
         Sea.chk_count=chk_count;
 
@@ -103,9 +113,11 @@ public class Controller implements Initializable {
         Sea.btn_stop=btn_stop;
         Sea.btn_start=btn_start;
 
+        // expose: status label for opening on-disk captures
+
         Sea.lbl_status_open_cap=lbl_status_open_cap;
 
-            // expose: filters gui
+        // expose: GUI for filtering
 
         Sea.from_chkEnd=from_chkEnd;
         Sea.from_txtIP=from_txtIP;
@@ -123,7 +135,9 @@ public class Controller implements Initializable {
         Sea.size2_cmbRelation=size2_cmbRelation;
         Sea.size2_txtValue=size2_txtValue;
 
-            // initialize: filters gui
+        // initialize and bind data to elements
+
+        // initialize: filters gui
 
         final ObservableList<String> types= FXCollections.observableArrayList();
         types.add(Sea.HTTP); types.add(Sea.TCP); types.add(Sea.UDP); types.add(Sea.ICMP);
@@ -139,7 +153,8 @@ public class Controller implements Initializable {
             size2_cmbRelation.setValue(relations.get(2));
 
 
-        // table cell value factories
+        // initialize: table cell value factories
+
         col_source.setCellValueFactory(new PropertyValueFactory<Packet, String>("source"));
         col_destination.setCellValueFactory(new PropertyValueFactory<Packet, String>("destination"));
         col_size.setCellValueFactory(new PropertyValueFactory<Packet, Integer>("size"));
@@ -148,7 +163,9 @@ public class Controller implements Initializable {
         col_destport.setCellValueFactory(new PropertyValueFactory<Packet, String>("destport"));
 
 
-        // assign triggers & events
+        // triggers
+
+        // trigger: open captured file
 
         btn_open.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -157,6 +174,7 @@ public class Controller implements Initializable {
             }
         });
 
+        // trigger: filter loaded packets
 
         EventHandler<ActionEvent> filter_command=new EventHandler<ActionEvent>() {
             @Override
@@ -169,12 +187,15 @@ public class Controller implements Initializable {
 
         btn_filter.setOnAction(filter_command);
 
+        // trigger: filter if these elements get changed
+
         from_chkEnd.setOnAction(filter_command);
         to_chkEnd.setOnAction(filter_command);
         type_cmb.setOnAction(filter_command);
         size1_cmbRelation.setOnAction(filter_command);
         size2_cmbRelation.setOnAction(filter_command);
 
+        // trigger: disable and enable filtering GUI
 
         txt_filters.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -189,6 +210,8 @@ public class Controller implements Initializable {
             }
         });
 
+        // trigger: reset filter GUI (remove filter) and refresh
+
         btn_filter_clear.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -202,36 +225,50 @@ public class Controller implements Initializable {
             }
         });
 
+        // trigger: show list of interfaces
+
         btn_get_interfaces.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 live.getInterfaces();
             }
         });
+
+        // trigger: start live capturing
+
         btn_start.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
+                // do nothing if no interface is selected
                 if (lst_interfaces.getSelectionModel().getSelectedItem()==null)
                     return;
 
+                // show status of process
                 lbl_status_open_cap.setText("Capturing...");
                 lbl_status_open_cap.setStyle("-fx-background-color: #a4f");
 
+                // initialize live capture
                 live=new Live();
 
+                // get selected interface and start capturing
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
                 live.capturePackets(str.split(":")[0].split("#")[1]);
 
-                // view
+                // after the capture:
+                // display the packets
                 Projector projector=new Projector(Sea.packets);
                 projector.setFilters();
                 projector.showFiltered();
 
-                // temp: use count int file-reader
+                //[]// debug and enable counting
+                // temp: get maximum count from file-capturing max
                 txt_count.setText(txt_count_cap.getText());
                 chk_count.setSelected(chk_count_cap.isSelected());
 
+                // enable 'stop' button
                 btn_stop.setDisable(false);
+                // disable all other controls
                 btn_start.setDisable(true);
                 lst_interfaces.setDisable(true);
                 chk_count.setDisable(true);
@@ -239,34 +276,44 @@ public class Controller implements Initializable {
 
             }
         });
+
+        // trigger: stop capturing
         btn_stop.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
+                // break the capturing loop
                 Sea.pcap.breakloop();
+
+                // try to join the thread
                 try {
                     Sea.thread.join();
-                } catch (InterruptedException e) {
-                    System.out.println("//");
-                } finally {
-                    //view
+                } catch (InterruptedException e) {}
+
+                finally {
+
+                    // show the packets
                     Projector projector=new Projector(Sea.packets);
                     projector.setFilters();
                     projector.showFiltered();
 
-                    // view stats
+                    // show the statistics
                     Sea.count_http.setText(Sea.n_http+"");
                     Sea.count_tcp.setText(Sea.n_tcp_other+"");
                     Sea.count_udp.setText(Sea.n_udp+"");
                     Sea.size_http.setText(Sea.s_http+"");
                     Sea.size_tcp.setText(Sea.s_tcp_other+"");
                     Sea.size_udp.setText(Sea.s_udp+"");
+
                 }
 
+                // enable all GUI controls
                 btn_start.setDisable(false);
                 lst_interfaces.setDisable(false);
                 chk_count.setDisable(false);
                 txt_count_cap.setDisable(false);
 
+                // show capture status
                 lbl_status_open_cap.setText("Stopped capturing");
                 lbl_status_open_cap.setStyle("-fx-background-color: #4cf");
             }

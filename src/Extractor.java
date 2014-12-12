@@ -16,7 +16,9 @@ import java.util.ArrayList;
  */
 public class Extractor {
 
+    // keep count of the packets captured
     int COUNT;
+    // initialize (construct) the module
     public Extractor(Pcap pcap, int _COUNT) {
         COUNT=_COUNT;
 
@@ -37,27 +39,39 @@ public class Extractor {
 
     PcapPacketHandler<ArrayList> packetHandler=new PcapPacketHandler<ArrayList>() {
 
+        // placeholders for recognized packet header types
         final Ip4 ip=new Ip4();
         final Tcp tcp=new Tcp();
         final Http http=new Http();
         final Udp udp=new Udp();
         final Icmp icmp=new Icmp();
 
+        // handle each packet
         @Override
         public void nextPacket(PcapPacket pcapPacket, ArrayList arrayList) {
 
+            // keep overall packet count
             Sea.printCapCountUp();
 
+            // for IP packets
             if (pcapPacket.hasHeader(ip)) {
 
+                // placeholder packet
                 Packet packet=new Packet();
                 packet.setSource(""+ FormatUtils.ip(ip.source()));
                 packet.setDestination("" + FormatUtils.ip(ip.destination()));
 
+                // analyze packet header
                 PcapHeader header=pcapPacket.getCaptureHeader();
+
+                // read packet size
                 int size=header.wirelen();
                 packet.setSize(size);
+
+                // for TCP packets
                 if (pcapPacket.hasHeader(tcp)) {
+
+                    // for HTTP packets
                     if (pcapPacket.hasHeader(http)) {
 
                         packet.setSourceport(tcp.source());
@@ -65,52 +79,78 @@ public class Extractor {
                         packet.setType(Sea.HTTP);
                         Sea.n_http++;
                         Sea.s_http+=size;
-                    } else if (pcapPacket.hasHeader(icmp)) {
+
+                    }
+
+                    // for ICMP packets
+                    else if (pcapPacket.hasHeader(icmp)) {
 
                         packet.setSourceport(tcp.source());
                         packet.setDestport(tcp.destination());
                         packet.setType(Sea.ICMP);
 
-                    } else {
+                    }
+
+                    // for other TCP packets
+                    else {
+
                         packet.setSourceport(tcp.source());
                         packet.setDestport(tcp.destination());
                         packet.setType(Sea.TCP);
                         Sea.n_tcp_other++;
                         Sea.s_tcp_other+=size;
+
                     }
-                } else if (pcapPacket.hasHeader(udp)) {
+                }
+
+                // for UDP packets
+                else if (pcapPacket.hasHeader(udp)) {
+
                     packet.setSourceport(udp.source());
                     packet.setDestport(udp.destination());
                     packet.setType(Sea.UDP);
                     Sea.n_udp++;
                     Sea.s_udp+=size;
+
                 }
 
+                // issue meta-packet to our stack
                 Sea.packets.add(Sea.packets.size(), packet);
 
-            } else {
+            }
+
+            // for unrecognized packets
+
+            else {
+
+                // keep count of type-unknown packets
                 Sea.n_packets_unknown++;
 
-                /* #AllTypes */
+                // placeholder packet
                 Packet packet=new Packet();
 
+                // analyze packet header
                 PcapHeader header=pcapPacket.getCaptureHeader();
+
+                // read packet size
                 int size=header.wirelen();
                 packet.setSize(size);
                 Sea.s_non_ip+=size;
 
+                // issue meta-packet
                 Sea.packets.add(Sea.packets.size(), packet);
+
             }
 
+            // keep overall packet count
             Sea.n_packets_all++;
 
+            // break if preset-maximum count is exceeded
             if (Sea.n_packets_all>=COUNT)
                 try {
+                    // break analization loop
                     Sea.pcap.breakloop();
-                    System.out.println("COUNT");
-                } catch (org.jnetpcap.PcapClosedException e) {
-                    System.out.println(":p");
-                }
+                } catch (org.jnetpcap.PcapClosedException e) {}
         }
     };
 }

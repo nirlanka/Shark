@@ -13,13 +13,15 @@ public class Sea {
 
     public static ArrayList<Packet> packets=new ArrayList<Packet>();
 
+    // maximum count of packets accpeted
     public static int max_count = 49999; // instead of Pcap.LOOP_INFINITE;
 
-    // types --> string
+    // types names as string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown"
             , ICMP="ICMP—tcp";
 
-    // ui elements
+    // ui element references
+
     public static TableColumn col_source;
     public static TableColumn col_destination;
     public static TextField txt_file;
@@ -77,6 +79,7 @@ public class Sea {
         lst_interfaces.setItems(_devs);
     }
 
+    // count of captured packets
     static int capCount=0;
     public static void printCapCountUp() {
         capCount++;
