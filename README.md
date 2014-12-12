@@ -4,7 +4,7 @@ Shark
 Packet capturing, analyzing and extraction of security related data in Java.
 (Not a fork of the deprecated *SharkHunt* project)
 
-Developer working environment: _IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1_
+Developer working environment: IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1
 
 Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 
@@ -12,15 +12,19 @@ Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 
 ### (planned) development milestones or **features**
 
-- [x] read offline **(captured to file)** packets
-- [x] extract them to memory and store **(in-memory)** efficiently
-- [x] filter them dynamicallly and efficiently
+- [x] read pcap/cap packet captures from disk
+- [x] extract packet details to memory and store in-memory
+- [x] filter packets dynamically and efficiently
 - [x] JavaFX GUI
 - [x] live capturing
-- [ ] documentation
-- [ ] {enhancements}
+- [x] GUI for filtering
+- [ ] documentation (general user)
+- [ ] documentation (developer)
+- [ ] optimization
+- [ ] plug-in system
 
-Currently, this is being developed under academic-project restrictions; but in a month, 
-the codebase-editing and the idea-suggestions will be open to the general public. :-)
+Project Shark was developed as a research-oriented solution. While it does not aim to be a
+replacement or alternative to the very popular and more advanced WireShark, we belive there
+is a place for a security-specific application with extensibility for specific usages.
 
-Founding developers: _[ Nirmal Lankathilaka ](https://github.com/NirmalL "Nirmal's GitHub"), [ Narmadaa Baalasooriya ](https://github.com/NarmadaBalasooriya "Narmada's GitHub"), [ Madusha Jayawardhana ](https://github.com/madushaj "Madusha's GitHub")_.
+Founding developers: [ Nirmal Lankathilaka ](https://github.com/NirmalL "Nirmal's GitHub"), [ Narmadaa Baalasooriya ](https://github.com/NarmadaBalasooriya "Narmada's GitHub"), [ Madusha Jayawardhana ](https://github.com/madushaj "Madusha's GitHub")
