@@ -62,17 +62,18 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // test
-//        txt_file.setText(Sea.filename);
+
+        //temp
+
         btn_stop.setDisable(true);
         txt_count_cap.setDisable(true);
         chk_count_cap.setDisable(true);
 
-        // temp
         btnHelp.setVisible(false);
         txt_filters.setVisible(false);
 
         // expose ui components
+
         Sea.col_source=col_source;
         Sea.col_destination=col_destination;
         Sea.txt_file=txt_file;
@@ -82,9 +83,7 @@ public class Controller implements Initializable {
         Sea.col_sourceport=col_sourceport;
         Sea.table_packets=table_packets;
         Sea.txt_filters=txt_filters;
-//        Sea.btn_filter=btn_filter;
         Sea.chk_filter=chk_filter;
-//        Sea.btn_filter_clear=btn_filter_clear;
         Sea.lbl_status_open=lbl_status_open;
 
         Sea.count_http=count_http;
@@ -148,7 +147,6 @@ public class Controller implements Initializable {
         col_sourceport.setCellValueFactory(new PropertyValueFactory<Packet, String>("sourceport"));
         col_destport.setCellValueFactory(new PropertyValueFactory<Packet, String>("destport"));
 
-//        final
 
         // assign triggers & events
 
@@ -166,7 +164,6 @@ public class Controller implements Initializable {
                 Projector proj=new Projector(Sea.packets);
                 proj.setFilters();
                 proj.showFiltered();
-//                btn_filter.setDisable(true);
             }
         };
 
@@ -177,14 +174,6 @@ public class Controller implements Initializable {
         type_cmb.setOnAction(filter_command);
         size1_cmbRelation.setOnAction(filter_command);
         size2_cmbRelation.setOnAction(filter_command);
-        // not working:
-//        from_txtIP.setOnAction(filter_command);
-//        from_txtPort.setOnAction(filter_command);
-//        to_txtIP.setOnAction(filter_command);
-//        to_txtPort.setOnAction(filter_command);
-//        size1_txtValue.setOnAction(filter_command);
-//        size2_txtValue.setOnAction(filter_command);
-//        chk_filter.setOnAction(filter_command);
 
 
         txt_filters.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -203,8 +192,6 @@ public class Controller implements Initializable {
         btn_filter_clear.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-//                txt_filters.setText("");
-//                btn_filter.setDisable(false);
                 from_txtIP.setText(""); from_chkEnd.setSelected(false); from_txtPort.setText("");
                 to_txtIP.setText(""); to_chkEnd.setSelected(false); to_txtPort.setText("");
                 type_cmb.setValue(type_cmb.getItems().get(type_cmb.getItems().size()-1));
@@ -233,7 +220,6 @@ public class Controller implements Initializable {
                 live=new Live();
 
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
-//                    System.out.println(str.split(":")[0].split("#")[1]);
                 live.capturePackets(str.split(":")[0].split("#")[1]);
 
                 // view
@@ -257,11 +243,9 @@ public class Controller implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 Sea.pcap.breakloop();
-//                System.out.println("Sea.pcap.breakloop()");
                 try {
                     Sea.thread.join();
                 } catch (InterruptedException e) {
-//                    e.printStackTrace();
                     System.out.println("//");
                 } finally {
                     //view
@@ -288,11 +272,6 @@ public class Controller implements Initializable {
             }
         });
 
-//        final Tooltip filterHelp=new Tooltip();
-//        filterHelp.setText("Some text");
-//        btnHelp.setTooltip(filterHelp);
-
-        //[ok?]// clear --> no auto refresh [but prompt to apply]
     }
 
 }

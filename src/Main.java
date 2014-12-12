@@ -12,12 +12,6 @@ public class Main extends Application {
         primaryStage.setTitle("Shark");
         Scene scene=new Scene(root);
 
-        // code
-
-        // test
-//        Sea.txt_file.setText(Sea.filename);
-//        new Reader();
-
         primaryStage.setResizable(false);
 
         primaryStage.setScene(scene);

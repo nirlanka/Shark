@@ -51,9 +51,6 @@ public class Packet {
                 +"to="+getDestination()+"-dest" + ":"+getDestport()+":dest"
                 +"size="+getSize()
                 + "prot="+getType().toLowerCase()
-/*
-                +"from="+getSource()+":"+getSourceport()+"-src"
-                +"to="+getDestination()+":"+getDestport()+"-dest"*/
         ;
     }
 }

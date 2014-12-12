@@ -1,8 +1,5 @@
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.jnetpcap.Pcap;
 import org.jnetpcap.PcapHeader;
-import org.jnetpcap.PcapIf;
 import org.jnetpcap.packet.PcapPacket;
 import org.jnetpcap.packet.PcapPacketHandler;
 import org.jnetpcap.packet.format.FormatUtils;
@@ -13,41 +10,11 @@ import org.jnetpcap.protocol.tcpip.Tcp;
 import org.jnetpcap.protocol.tcpip.Udp;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Nirmal on 16/11/2014.
  */
 public class Extractor {
-
-    void getInterfaces() {
-
-        final ObservableList<String> devs =
-                FXCollections.observableArrayList();
-
-        List<PcapIf> alldevs = new ArrayList<PcapIf>();
-        StringBuilder errbuf = new StringBuilder();
-
-        int r = Pcap.findAllDevs(alldevs, errbuf);
-        if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
-            System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
-            return;
-            //[]// show errors
-        }
-
-        int i = 0;
-        for (PcapIf device : alldevs) {
-            devs.add("#"+(i-1)+": "+
-                            ((device.getDescription() != null)
-                                    ? device.getDescription()
-                                    : device.getName())
-            );
-        }
-
-        Sea.lst_interfaces.setItems(devs);
-
-        //[]// show 'done'
-    }
 
     int COUNT;
     public Extractor(Pcap pcap, int _COUNT) {
@@ -59,27 +26,12 @@ public class Extractor {
         if (Sea.chk_count.isSelected() && count>user_count)
             count=user_count;
 
-//        n_packets_all=Sea.txt
-
         Sea.n_packets_all=0; Sea.n_http=0; Sea.n_tcp_other=0; Sea.n_udp=0; Sea.n_packets_unknown=0;
         /*s_packets_all=0;*/ Sea.s_http=0; Sea.s_tcp_other=0; Sea.s_udp=0/*; s_packets_unknown=0*/;
 
         Sea.packets.clear();
         pcap.loop(count, packetHandler, Sea.packets);
         pcap.close();
-
-//        // view
-//        Projector projector=new Projector(Sea.packets);
-//        projector.setFilters();
-//        projector.showFiltered();
-//
-//        // view stats
-//        Sea.count_http.setText(n_http+"");
-//        Sea.count_tcp.setText(n_tcp_other+"");
-//        Sea.count_udp.setText(n_udp+"");
-//        Sea.size_http.setText(s_http+"");
-//        Sea.size_tcp.setText(s_tcp_other+"");
-//        Sea.size_udp.setText(s_udp+"");
 
     }
 
@@ -118,8 +70,7 @@ public class Extractor {
                         packet.setSourceport(tcp.source());
                         packet.setDestport(tcp.destination());
                         packet.setType(Sea.ICMP);
-//                        Sea.n_http++;
-//                        Sea.s_http+=size;
+
                     } else {
                         packet.setSourceport(tcp.source());
                         packet.setDestport(tcp.destination());
@@ -135,13 +86,10 @@ public class Extractor {
                     Sea.s_udp+=size;
                 }
 
-//                System.out.println(packet.toString());
-
                 Sea.packets.add(Sea.packets.size(), packet);
 
             } else {
                 Sea.n_packets_unknown++;
-//                s_packets_unknown+=size;
 
                 /* #AllTypes */
                 Packet packet=new Packet();
@@ -155,7 +103,6 @@ public class Extractor {
             }
 
             Sea.n_packets_all++;
-//            s_packets_all+=size;
 
             if (Sea.n_packets_all>=COUNT)
                 try {

@@ -13,9 +13,7 @@ public class Sea {
 
     public static ArrayList<Packet> packets=new ArrayList<Packet>();
 
-   // public static String filename="/dev/java/IdeaProjects/Shark/caps/SkypeIRC.cap"; //temp
-
-    public static int max_count = 49999;//Pcap.LOOP_INFINITE;
+    public static int max_count = 49999; // instead of Pcap.LOOP_INFINITE;
 
     // types --> string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown"
@@ -31,9 +29,7 @@ public class Sea {
     public static TableColumn col_sourceport;
     public static TableView table_packets;
     public static TextArea txt_filters;
-//    public static Button btn_filter;
     public static CheckBox chk_filter;
-//    public static Button btn_filter_clear;
     public static Label lbl_status_open;
 
     public static Label count_http;
@@ -50,8 +46,6 @@ public class Sea {
     public static ListView lst_interfaces;
     public static Button btn_get_interfaces;
 
-//    public static Object btn_stop;
-//    public static Button btn_start;
     public static Pcap pcap;
     public static List<PcapIf> devices;
 
@@ -86,6 +80,5 @@ public class Sea {
     static int capCount=0;
     public static void printCapCountUp() {
         capCount++;
-//        lbl_status_open_cap.setText(capCount+"");
     }
 }

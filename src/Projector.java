@@ -63,25 +63,6 @@ public class Projector {
 
         String[] lines=Sea.txt_filters.getText().split("\n");
 
-        /*for (String line : lines) {
-
-            String[] words=line.split(" ");
-
-            for (String word : words) {
-                if (word.contains(">") || word.contains("<")) {
-                    compareSize=true;
-                    if (word.contains(">")) { //size>100
-                        greaterThan=getNumOfComparison(word);
-                    } else { //size<100
-                        lowerThan=getNumOfComparison(word);
-                    }
-                }
-                else if (!word.equals("") && !word.contains("/")) {
-                    filters.add(filters.size(), word);
-                }
-            }
-
-        }*/
 
         String tmp;
 
@@ -108,7 +89,6 @@ public class Projector {
 
         if (!(tmp=Sea.to_txtPort.getText()).equals("")) {
             filters.add(filters.size(), ":" + tmp + ":dest");
-//            System.out.println(":" + tmp + ":dest");
         }
 
         // size 1
@@ -158,19 +138,4 @@ public class Projector {
         return true;
     }
 
-    /*static int getNumOfComparison(String word) {
-        char[] __word=word.toCharArray();
-        String num="";
-        boolean passedComparator=false;
-
-        for (char c : __word) {
-            if (!passedComparator) {
-                if (c=='>' || c=='<') passedComparator=true;
-            } else {
-                num+=c;
-            }
-        }
-
-        return Integer.parseInt(num);
-    }*/
 }

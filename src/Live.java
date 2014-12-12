@@ -23,11 +23,9 @@ public class Live {
         if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
             System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
             return;
-            //[]// show errors
         }
 
         Sea.devices=alldevs; // implement on Sea
-//        Sea.setDevices(alldevs);
 
         int i = 0;
         for (PcapIf device : alldevs) {
@@ -40,15 +38,12 @@ public class Live {
         }
 
         Sea.lst_interfaces.setItems(devs); // implement on Sea
-//        Sea.setDeviceList(devs);
 
-        //[]// show 'done'
     }
 
     void capturePackets(String i) {
 
         PcapIf device=Sea.devices.get(Integer.parseInt(i));
-//        System.out.println(Sea.devices.get(Integer.parseInt(i)));
         StringBuilder errbuf = new StringBuilder();
 
         int snaplen = 64 * 1024;           // Capture all packets, no trucation
@@ -58,13 +53,9 @@ public class Live {
         Pcap pcap =
                 Pcap.openLive(device.getName(), snaplen, flags, timeout, errbuf);
 
-//        return new CaptureThread(pcap);
         Sea.thread=new Thread(new CaptureThread(pcap));
         Sea.thread.start();
 
-////        Extractor ex=new Extractor(pcap);
-
-//        System.out.println(device.getName());
     }
 
     private class CaptureThread implements Runnable {
