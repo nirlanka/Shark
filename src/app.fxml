@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 
 <GridPane alignment="center" hgap="10" prefHeight="461.0" prefWidth="881.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
@@ -22,15 +16,12 @@
          <children>
             <TableView fx:id="table_packets" layoutX="1.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0">
               <columns>
-                <!--<TableColumn fx:id="col_time" prefWidth="42.0" />-->
                   <TableColumn fx:id="col_source" prefWidth="137.0" text="Source" />
                   <TableColumn fx:id="col_sourceport" prefWidth="78.0" text="port" />
                   <TableColumn fx:id="col_destination" prefWidth="122.0" text="Destination" />
                   <TableColumn fx:id="col_destport" prefWidth="59.0" text="port" />
                   <TableColumn fx:id="col_size" prefWidth="71.0" text="Size" />
                   <TableColumn fx:id="col_type" prefWidth="90.0" text="Type" />
-
-
               </columns>
             </TableView>
             <Accordion layoutX="592.0" layoutY="6.0" prefHeight="448.0" prefWidth="278.0">
