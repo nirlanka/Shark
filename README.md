@@ -20,9 +20,7 @@ Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 - [ ] documentation
 - [ ] {enhancements}
 
-These are just the initial goals. Once they're accomplished, we'll be moving on to much more interesting and hacking-related stuff.
-
 Currently, this is being developed under academic-project restrictions; but in a month, 
-the codebase and the ideas will be open to the general public. :-)
+the codebase-editing and the idea-suggestions will be open to the general public. :-)
 
 Founding developers: _[ Nirmal Lankathilaka ](https://github.com/NirmalL "Nirmal's GitHub"), [ Narmadaa Baalasooriya ](https://github.com/NarmadaBalasooriya "Narmada's GitHub"), [ Madusha Jayawardhana ](https://github.com/madushaj "Madusha's GitHub")_.
