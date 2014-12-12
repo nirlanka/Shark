@@ -69,8 +69,8 @@ public class Controller implements Initializable {
         // temporarily disable/hide un-needed GUI elements
 
         btn_stop.setDisable(true);
-        txt_count_cap.setDisable(true);
-        chk_count_cap.setDisable(true);
+        txt_count_cap.setVisible(false);
+        chk_count_cap.setVisible(false);
 
         btnHelp.setVisible(false);
         txt_filters.setVisible(false);

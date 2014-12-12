@@ -72,13 +72,6 @@ public class Sea {
     public static ComboBox size2_cmbRelation;
     public static TextField size2_txtValue;
 
-    public static void setDevices(List<PcapIf> _devices) {
-        devices=_devices;
-    }
-    public static void setDeviceList(ObservableList<String> _devs) {
-        lst_interfaces.setItems(_devs);
-    }
-
     // count of captured packets
     static int capCount=0;
     public static void printCapCountUp() {
