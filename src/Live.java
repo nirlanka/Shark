@@ -48,6 +48,7 @@ public class Live {
     void capturePackets(String i) {
 
         PcapIf device=Sea.devices.get(Integer.parseInt(i));
+//        System.out.println(Sea.devices.get(Integer.parseInt(i)));
         StringBuilder errbuf = new StringBuilder();
 
         int snaplen = 64 * 1024;           // Capture all packets, no trucation

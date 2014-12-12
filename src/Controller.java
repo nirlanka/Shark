@@ -233,6 +233,7 @@ public class Controller implements Initializable {
                 live=new Live();
 
                 String str=lst_interfaces.getSelectionModel().getSelectedItem();
+//                    System.out.println(str.split(":")[0].split("#")[1]);
                 live.capturePackets(str.split(":")[0].split("#")[1]);
 
                 // view
