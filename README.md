@@ -3,7 +3,7 @@ Shark
 
 Packet capturing, analyzing and extraction of security related data in Java.
 
-Read [how to set-up](https://github.com/NirmalL/Shark/wiki/Setting-up)
+Read [How to Set-up](https://github.com/NirmalL/Shark/wiki/Setting-up)
 
 ![ A screenshot of Shark ](content/loaded-filter.png)
 
