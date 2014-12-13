@@ -2,11 +2,8 @@ Shark
 =====
 
 Packet capturing, analyzing and extraction of security related data in Java.
-(Not a fork of the deprecated *SharkHunt* project)
 
-Developer working environment: IntelliJ IDEA (community), jNetPcap, JavaFX, Windows 8.1
-
-Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
+Read [how to set-up](https://github.com/NirmalL/Shark/wiki/Setting-up)
 
 ![ A screenshot of Shark ](content/loaded-filter.png)
 
