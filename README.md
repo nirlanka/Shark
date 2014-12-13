@@ -15,7 +15,7 @@ Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 - [x] read pcap/cap packet captures from disk
 - [x] extract packet details to memory and store in-memory
 - [x] filter packets dynamically and efficiently
-- [x] JavaFX GUI
+- [x] GUI
 - [x] live capturing
 - [x] GUI for filtering
 - [ ] documentation (general user)
