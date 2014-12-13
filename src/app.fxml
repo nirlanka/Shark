@@ -73,7 +73,6 @@
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnHelp" layoutX="238.0" layoutY="35.0" mnemonicParsing="false" text="?" />
                               <Accordion layoutX="16.0" layoutY="246.0" />
                               <Label layoutX="14.0" layoutY="101.0" prefHeight="17.0" prefWidth="35.0" text="from" />
                               <TextField fx:id="from_txtIP" layoutX="49.0" layoutY="97.0" prefHeight="25.0" prefWidth="107.0" />
