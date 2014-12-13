@@ -2,6 +2,7 @@ Shark
 =====
 
 Packet capturing, analyzing and extraction of security related data in Java.
+[#betterShark](https://twitter.com/hashtag/betterShark?src=hash)
 
 Read [How to Set-up](https://github.com/NirmalL/Shark/wiki/Setting-up)
 
