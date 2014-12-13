@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="461.0" prefWidth="881.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<GridPane alignment="center" hgap="10" prefHeight="461.0" prefWidth="881.0" stylesheets="@maccy.css" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -14,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="482.0" prefWidth="870.0">
          <children>
-            <TableView fx:id="table_packets" layoutX="1.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0">
+            <TableView fx:id="table_packets" layoutX="2.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0">
               <columns>
                   <TableColumn fx:id="col_source" prefWidth="137.0" text="Source" />
                   <TableColumn fx:id="col_sourceport" prefWidth="78.0" text="port" />
@@ -24,7 +25,7 @@
                   <TableColumn fx:id="col_type" prefWidth="90.0" text="Type" />
               </columns>
             </TableView>
-            <Accordion layoutX="592.0" layoutY="6.0" prefHeight="448.0" prefWidth="278.0">
+            <Accordion layoutX="590.0" layoutY="6.0" prefHeight="448.0" prefWidth="278.0">
               <panes>
                   <TitledPane text="Capture"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -113,9 +114,9 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="HTTP      " underline="true" GridPane.columnIndex="1" />
-                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="61.0" text="Other TCP" underline="true" GridPane.columnIndex="2" />
-                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="65.0" text="UDP           " underline="true" GridPane.columnIndex="3" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="46.0" text="HTTP" underline="true" GridPane.columnIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="47.0" text="Other" underline="true" GridPane.columnIndex="2" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="47.0" text="UDP" underline="true" GridPane.columnIndex="3" />
                                     <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="count" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
