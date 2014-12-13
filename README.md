@@ -5,7 +5,7 @@ Packet capturing, analyzing and extraction of security related data in Java.
 
 Read [How to Set-up](https://github.com/NirmalL/Shark/wiki/Setting-up)
 
-![ A screenshot of Shark ](content/loaded-filter.png)
+![ A screenshot of Shark ](content/filtered.png)
 
 Read [Developer Milestones & Goals](https://github.com/NirmalL/Shark/wiki/Goals)
 
