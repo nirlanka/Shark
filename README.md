@@ -8,7 +8,7 @@ Developer working environment: IntelliJ IDEA (community), jNetPcap, JavaFX, Wind
 
 Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 
-![ A screenshot of Shark ](content/screenshot-2.png)
+![ A screenshot of Shark ](content/loaded-filter.png)
 
 Read [Developer Milestones & Goals](https://github.com/NirmalL/Shark/wiki/Goals)
 
