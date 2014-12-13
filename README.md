@@ -10,21 +10,10 @@ Prerequisites: [WinPcap(libpcap)](https://www.winpcap.org/install/)
 
 ![ A screenshot of Shark ](content/screenshot-2.png)
 
-### (planned) development milestones or **features**
-
-- [x] read pcap/cap packet captures from disk
-- [x] extract packet details to memory and store in-memory
-- [x] filter packets dynamically and efficiently
-- [x] GUI
-- [x] live capturing
-- [x] GUI for filtering
-- [ ] documentation (general user)
-- [ ] documentation (developer)
-- [ ] optimization
-- [ ] plug-in system
+Read [Developer Milestones & Goals](wiki/Goals)
 
 Project Shark was developed as a research-oriented solution. While it does not aim to be a
 replacement or alternative to the very popular and more advanced WireShark, we belive there
-is a place for a security-specific application with extensibility for specific usages.
+is a place for a security-specific application with extensibility for specific usages. (Read our [philosophy](wiki#philosophy))
 
-Founding developers: [ Nirmal Lankathilaka ](https://github.com/NirmalL "Nirmal's GitHub"), [ Narmadaa Baalasooriya ](https://github.com/NarmadaBalasooriya "Narmada's GitHub"), [ Madusha Jayawardhana ](https://github.com/madushaj "Madusha's GitHub")
+Founding developers: [ Nirmal ](https://github.com/NirmalL "Nirmal's GitHub"), [ Narmadaa ](https://github.com/NarmadaBalasooriya "Narmada's GitHub"), [ Madusha ](https://github.com/madushaj "Madusha's GitHub")
