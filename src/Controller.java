@@ -24,7 +24,6 @@ public class Controller implements Initializable {
     public TextField txt_file;
     public Button btn_open;
     public TableView table_packets;
-    public TextArea txt_filters;
     public Button btn_filter;
     public CheckBox chk_filter;
     public Button btn_filter_clear;
@@ -46,7 +45,6 @@ public class Controller implements Initializable {
     public TextField txt_count_cap;
     public CheckBox chk_count_cap;
     public Label lbl_status_open_cap;
-    public Button btnHelp;
     public TextField from_txtIP;
     public TextField from_txtPort;
     public CheckBox from_chkEnd;
@@ -72,9 +70,6 @@ public class Controller implements Initializable {
         txt_count_cap.setVisible(false);
         chk_count_cap.setVisible(false);
 
-        btnHelp.setVisible(false);
-        txt_filters.setVisible(false);
-
         // expose GUI components to every part of the program
         //  by statically assigning them to references in Sea class
 
@@ -88,7 +83,6 @@ public class Controller implements Initializable {
         Sea.col_destport=col_destport;
         Sea.col_sourceport=col_sourceport;
         Sea.table_packets=table_packets;
-        Sea.txt_filters=txt_filters;
         Sea.chk_filter=chk_filter;
         Sea.lbl_status_open=lbl_status_open;
 
@@ -197,12 +191,6 @@ public class Controller implements Initializable {
 
         // trigger: disable and enable filtering GUI
 
-        txt_filters.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                btn_filter.setDisable(false);
-            }
-        });
         chk_filter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

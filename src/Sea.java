@@ -30,7 +30,6 @@ public class Sea {
     public static TableColumn col_destport;
     public static TableColumn col_sourceport;
     public static TableView table_packets;
-    public static TextArea txt_filters;
     public static CheckBox chk_filter;
     public static Label lbl_status_open;
 
