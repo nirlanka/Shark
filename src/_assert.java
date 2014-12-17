@@ -17,11 +17,19 @@ public class _assert {
         );
         else System.out.println("_assert: passed all");
     }
-//    public static void isEqual(){
-//        if (a) System.out.println(
-//                "_assert:\n"
-//                        + "expected false, found true"
-//        );
-//        else System.out.println("_assert: passed all");
-//    }
+
+    public static void isEqual(int exp, int fnd){
+        if (exp!=fnd) System.out.println(
+                "_assert:\n"
+                        + "expected false, found true"
+        );
+        else System.out.println("_assert: passed all");
+    }
+    public static void isEqual(String exp, String fnd){
+        if (exp.equals(fnd)) System.out.println(
+                "_assert:\n"
+                        + "expected false, found true"
+        );
+        else System.out.println("_assert: passed all");
+    }
 }
