@@ -48,15 +48,15 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="73.0" prefHeight="25.0" prefWidth="248.0" promptText="/path/file.*cap" />
-                              <Button fx:id="btn_open" defaultButton="true" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" text="Open" />
+                              <TextField fx:id="txt_file" layoutX="14.0" layoutY="48.0" prefHeight="25.0" prefWidth="248.0" promptText="/path/file.*cap" />
+                              <Button fx:id="btn_open" defaultButton="true" layoutX="115.0" layoutY="83.0" mnemonicParsing="false" text="Open" />
                               <Label fx:id="lbl_status_open" alignment="CENTER" layoutX="-1.0" prefHeight="33.0" prefWidth="278.0" style="-fx-background-color: #bbb;" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font>
                               </Label>
-                              <CheckBox fx:id="chk_count" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" selected="true" />
-                              <TextField fx:id="txt_count" layoutX="35.0" layoutY="40.0" prefHeight="25.0" prefWidth="117.0" promptText="number of packets" />
+                              <CheckBox fx:id="chk_count" layoutX="69.0" layoutY="121.0" mnemonicParsing="false" selected="true" visible="false" />
+                              <TextField fx:id="txt_count" layoutX="90.0" layoutY="117.0" prefHeight="25.0" prefWidth="117.0" promptText="number of packets" visible="false" />
                            </children>
                         </AnchorPane>
                   </content>
