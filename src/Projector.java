@@ -2,6 +2,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by Nirmal on 16/11/2014.
@@ -169,8 +170,12 @@ public class Projector {
         // type (protocol)
 
         // if not empty
-        if (!Sea.type_cmb.getValue().equals(Sea.type_cmb.getItems().get(Sea.type_cmb.getItems().size()-1)))
-            filters.add(filters.size(), "" + Sea.type_cmb.getValue().toString().toLowerCase());
+
+        Object typeCmbValue=Sea.type_cmb.getValue();
+        ObservableList<Packet> typeCmbItems=Sea.type_cmb.getItems();
+
+        if (!typeCmbValue.equals(typeCmbItems.get(typeCmbItems.size() - 1)))
+            filters.add(filters.size(), "" + typeCmbValue.toString().toLowerCase());
 
     }
 
