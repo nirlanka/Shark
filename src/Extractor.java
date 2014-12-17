@@ -129,6 +129,9 @@ public class Extractor {
                 // placeholder packet
                 Packet packet=new Packet();
 
+                // unknown type
+                packet.setType(Sea.Unknown);
+
                 // analyze packet header
                 PcapHeader header=pcapPacket.getCaptureHeader();
 
