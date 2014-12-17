@@ -16,21 +16,21 @@ public class TestLive {
 
         /////// from Live().getInterfaces() ///////
 
-        // placeholder for device list
-        List<PcapIf> alldevs = new ArrayList<PcapIf>();
-        StringBuilder errbuf = new StringBuilder();
+            // placeholder for device list
+            List<PcapIf> alldevs = new ArrayList<PcapIf>();
+            StringBuilder errbuf = new StringBuilder();
 
-        // fill it
-        int r = Pcap.findAllDevs(alldevs, errbuf);
+            // fill it
+            int r = Pcap.findAllDevs(alldevs, errbuf);
 
-        // on errors
-        if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
-            System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
-            return;
-        }
+            // on errors
+            if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
+                System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
+                return;
+            }
 
-        // expose to Sea
-        Sea.devices=alldevs;
+            // expose to Sea
+            Sea.devices=alldevs;
 
         ///////////////////////////////////////////
 
@@ -44,21 +44,21 @@ public class TestLive {
 
         /////// from Live().getInterfaces() ///////
 
-        // placeholder for device list
-        List<PcapIf> alldevs = new ArrayList<PcapIf>();
-        StringBuilder errbuf = new StringBuilder();
+            // placeholder for device list
+            List<PcapIf> alldevs = new ArrayList<PcapIf>();
+            StringBuilder errbuf = new StringBuilder();
 
-        // fill it
-        int r = Pcap.findAllDevs(alldevs, errbuf);
+            // fill it
+            int r = Pcap.findAllDevs(alldevs, errbuf);
 
-        // on errors
-        if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
-            System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
-            return;
-        }
+            // on errors
+            if (r == Pcap.NOT_OK || alldevs.isEmpty()) {
+                System.err.printf("Can't read list of devices. Errbuff:\n %s", errbuf.toString());
+                return;
+            }
 
-        // expose to Sea
-        Sea.devices=alldevs;
+            // expose to Sea
+            Sea.devices=alldevs;
 
         ///////////////////////////////////////////
 
