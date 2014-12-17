@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -13,16 +14,16 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="482.0" prefWidth="870.0">
+      <AnchorPane prefHeight="482.0" prefWidth="870.0" style="-fx-background-color: auto;">
          <children>
-            <TableView fx:id="table_packets" layoutX="2.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0">
+            <TableView fx:id="table_packets" cache="true" layoutX="2.0" layoutY="6.0" prefHeight="448.0" prefWidth="581.0" styleClass="dark" tableMenuButtonVisible="true">
               <columns>
-                  <TableColumn fx:id="col_source" prefWidth="137.0" text="Source" />
-                  <TableColumn fx:id="col_sourceport" prefWidth="78.0" text="port" />
+                  <TableColumn fx:id="col_source" prefWidth="142.0" text="Source" />
+                  <TableColumn fx:id="col_sourceport" prefWidth="51.0" text="port" />
                   <TableColumn fx:id="col_destination" prefWidth="122.0" text="Destination" />
                   <TableColumn fx:id="col_destport" prefWidth="59.0" text="port" />
-                  <TableColumn fx:id="col_size" prefWidth="71.0" text="Size" />
-                  <TableColumn fx:id="col_type" prefWidth="90.0" text="Type" />
+                  <TableColumn fx:id="col_type" prefWidth="102.0" text="Type" />
+                  <TableColumn fx:id="col_size" prefWidth="85.0" text="Size" />
               </columns>
             </TableView>
             <Accordion layoutX="590.0" layoutY="6.0" prefHeight="448.0" prefWidth="278.0">
@@ -30,7 +31,10 @@
                   <TitledPane text="Capture"><content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ListView fx:id="lst_interfaces" layoutX="15.0" layoutY="73.0" prefHeight="124.0" prefWidth="248.0" />
+                              <ListView fx:id="lst_interfaces" layoutX="15.0" layoutY="73.0" prefHeight="124.0" prefWidth="248.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets></ListView>
                               <Button fx:id="btn_start" defaultButton="true" layoutX="77.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Start" />
                               <Button fx:id="btn_stop" layoutX="141.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Stop" />
                               <TextField fx:id="txt_count_cap" layoutX="35.0" layoutY="41.0" prefHeight="25.0" prefWidth="109.0" promptText="number of packets" />

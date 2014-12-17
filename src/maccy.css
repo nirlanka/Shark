@@ -1,3 +1,18 @@
-.text {
+* {
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 13px;
 }
+
+/*
+.dark {
+    -fx-background-color: #333;
+    -fx-color: #fff;
+    -fx-text-fill: white;
+}
+*/
+
+/*
+.round {
+    -fx-border-radius: 3px;
+}
+*/
