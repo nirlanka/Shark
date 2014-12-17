@@ -18,7 +18,9 @@ public class Sea {
 
     // types names as string
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown"
-            , ICMP="ICMP—tcp";
+            , ICMP="ICMP—tcp"
+            , ARP="ARP", RTP="RTP—VoIP", SDP="SDP—VoIP", SIP="SIP—VoIP", PPP="PPP—wan", L2TP="L2TP—vpn"
+            ;
 
     // ui element references
 
