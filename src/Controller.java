@@ -135,7 +135,10 @@ public class Controller implements Initializable {
 
         final ObservableList<String> types= FXCollections.observableArrayList();
         types.add(Sea.HTTP); types.add(Sea.TCP); types.add(Sea.UDP); types.add(Sea.ICMP);
-            types.add(Sea.Unknown); types.add("Any");
+        types.add(Sea.ARP); types.add(Sea.VOIP__); types.add(Sea.WAN__);
+                types.add(Sea.VPN__);
+        // finally:
+        types.add(Sea.Unknown); types.add("Any");
         type_cmb.setItems(types);
             type_cmb.setValue(types.get(types.size()-1));
 

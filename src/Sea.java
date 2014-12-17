@@ -20,6 +20,8 @@ public class Sea {
     public static String HTTP="HTTP—tcp", TCP="TCP", UDP="UDP", Unknown="Unknown"
             , ICMP="ICMP—tcp"
             , ARP="ARP", RTP="RTP—VoIP", SDP="SDP—VoIP", SIP="SIP—VoIP", PPP="PPP—wan", L2TP="L2TP—vpn"
+                , VOIP="voip", WAN="wan", VPN="vpn"
+                , VOIP__="VoIP (rtp,sdp,sid)", WAN__="WAN (L2TP)", VPN__="VPN (L2TP)"
             ;
 
     // ui element references
