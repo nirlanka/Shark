@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class TestPacket {
+public class Packet_test {
 
     static String dummySourceIP ="source.dummy.ip",
             dummyDestIP ="dest.dummy.ip",

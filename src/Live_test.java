@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class TestLive {
+public class Live_test {
 
     @Test
     public void testGetInterfaces() throws Exception {
@@ -64,6 +64,10 @@ public class TestLive {
 
         assertFalse(r == Pcap.NOT_OK || alldevs.isEmpty());
 
+        //
+
         live.capturePackets("1");
+
+        assertNotNull(Sea.pcap);
     }
 }
