@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class Live_test {
 
     @Test
-    public void testGetInterfaces() throws Exception {
+    public void getInterfaces() throws Exception {
         Live live=new Live();
 //        live.getInterfaces(); // can't use: dependent on FX
 
@@ -39,7 +39,7 @@ public class Live_test {
     }
 
     @Test
-    public void testCapturePackets() throws Exception {
+    public void capturePackets() throws Exception {
         Live live=new Live();
 
         /////// from Live().getInterfaces() ///////

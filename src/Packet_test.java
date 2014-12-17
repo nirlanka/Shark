@@ -18,7 +18,7 @@ public class Packet_test {
     // get fields
 
     @Test
-    public void testGetters() throws Exception {
+    public void getters() throws Exception {
 
         // default constructor
 
@@ -52,7 +52,7 @@ public class Packet_test {
     // set fields
 
     @Test
-    public void testSetters() throws Exception {
+    public void setters() throws Exception {
 
         Packet packet=new Packet();
 
@@ -77,7 +77,7 @@ public class Packet_test {
     // property values (observable list -- columns)
 
     @Test
-    public void testProperties() throws Exception {
+    public void properties() throws Exception {
         // depends on the setters and the constructor
         // getters depend on this
         // therefore, getter+setter tests also
@@ -87,7 +87,7 @@ public class Packet_test {
     //
 
     @Test
-    public void testToString() throws Exception {
+    public void _toString() throws Exception {
 
         Packet packet=new Packet(dummySourceIP, dummyDestIP, dummySize,dummyType, dummySourcePort_str, dummyDestPort_str);
 
