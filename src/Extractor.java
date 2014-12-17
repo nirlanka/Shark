@@ -54,9 +54,9 @@ public class Extractor {
 
         final Arp arp=new Arp();    // network
         final Rtp rtp=new Rtp();    // voip
-        final PPP ppp=new PPP();    // wan
         final Sdp sdp=new Sdp();    // voip
         final Sip sip=new Sip();    // voip
+        final PPP ppp=new PPP();    // wan
         final L2TP l2tp=new L2TP(); // vpn
 
         // handle each packet
@@ -126,6 +126,38 @@ public class Extractor {
                     Sea.s_udp+=size;
 
                 }
+
+                //[]// check validity:
+
+                // for network-layer packets
+                else if (pcapPacket.hasHeader(arp)) {
+                    packet.setType(Sea.ARP);
+                }
+
+                // for VoIP packets
+                else if (pcapPacket.hasHeader(rtp)) {
+                    packet.setType(Sea.RTP);
+                    System.out.println(Sea.RTP);
+                }
+                else if (pcapPacket.hasHeader(sdp)) {
+                    packet.setType(Sea.SDP);
+                    System.out.println(Sea.SDP);
+                }
+                else if (pcapPacket.hasHeader(sip)) {
+                    packet.setType(Sea.SIP);
+                    System.out.println(Sea.SIP);
+                }
+
+                // for WAN packets
+                else if (pcapPacket.hasHeader(ppp)) {
+                    packet.setType(Sea.PPP);
+                }
+
+                // for VPN packets
+                else if (pcapPacket.hasHeader(l2tp)) {
+                    packet.setType(Sea.L2TP);
+                }
+
 
                 // issue meta-packet to our stack
                 Sea.packets.add(Sea.packets.size(), packet);

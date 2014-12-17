@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e5de015-9e28-4b65-a6b1-197a9dafea39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller.java" afterPath="$PROJECT_DIR$/src/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sea.java" afterPath="$PROJECT_DIR$/src/Sea.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Extractor.java" afterPath="$PROJECT_DIR$/src/Extractor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Shark.iws" />
@@ -36,11 +35,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.534407">
       <split-first>
         <leaf>
-          <file leaf-file-name="Extractor.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Extractor.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Extractor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2254">
-                  <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+                <state vertical-scroll-proportion="0.503268" vertical-offset="266" max-vertical-offset="2702">
+                  <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -58,11 +57,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Sea.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Sea.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Sea.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.27450982" vertical-offset="70" max-vertical-offset="1134">
-                  <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="1134">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -82,10 +81,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Extractor.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Extractor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.18300654" vertical-offset="1526" max-vertical-offset="2702">
+                  <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.45751634" vertical-offset="1498" max-vertical-offset="3962">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="3962">
                   <caret line="138" column="19" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
                   <folding />
                 </state>
@@ -201,10 +210,10 @@
         <option value="$PROJECT_DIR$/src/Tester.java" />
         <option value="$PROJECT_DIR$/src/_assert.java" />
         <option value="$PROJECT_DIR$/src/Extractor_test.java" />
-        <option value="$PROJECT_DIR$/src/Extractor.java" />
         <option value="$PROJECT_DIR$/src/Projector.java" />
         <option value="$PROJECT_DIR$/src/Sea.java" />
         <option value="$PROJECT_DIR$/src/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Extractor.java" />
       </list>
     </option>
   </component>
@@ -745,7 +754,13 @@
       <option name="project" value="LOCAL" />
       <updated>1418850597636</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add GUI list items for more protocols">
+      <created>1418851057524</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1418851057524</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -838,7 +853,8 @@
     <MESSAGE value="Add header-containers for more protocols" />
     <MESSAGE value="Add strings for more protocols (in Sea)" />
     <MESSAGE value="Better type filterer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better type filterer" />
+    <MESSAGE value="Add GUI list items for more protocols" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GUI list items for more protocols" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1219,14 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Extractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2254">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/_assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
@@ -1245,14 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27450982" vertical-offset="70" max-vertical-offset="1134">
-          <caret line="23" column="84" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
@@ -1263,8 +1263,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45751634" vertical-offset="1498" max-vertical-offset="3962">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="3962">
           <caret line="138" column="19" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="1134">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Extractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18300654" vertical-offset="1526" max-vertical-offset="2702">
+          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
           <folding />
         </state>
       </provider>
