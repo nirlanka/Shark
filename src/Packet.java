@@ -12,7 +12,7 @@ public class Packet {
     private final IntegerProperty size;
 
     // constructor
-    public Packet(String source, String destination, int size, String type, String destport, String sourceport) {
+    public Packet(String source, String destination, int size, String type, String sourceport, String destport) {
         this.source = new SimpleStringProperty(source);
         this.destination = new SimpleStringProperty(destination);
         this.size = new SimpleIntegerProperty(size);
