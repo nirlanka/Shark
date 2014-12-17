@@ -3,11 +3,17 @@ import org.jnetpcap.PcapHeader;
 import org.jnetpcap.packet.PcapPacket;
 import org.jnetpcap.packet.PcapPacketHandler;
 import org.jnetpcap.packet.format.FormatUtils;
+import org.jnetpcap.protocol.network.Arp;
 import org.jnetpcap.protocol.network.Icmp;
 import org.jnetpcap.protocol.network.Ip4;
 import org.jnetpcap.protocol.tcpip.Http;
 import org.jnetpcap.protocol.tcpip.Tcp;
 import org.jnetpcap.protocol.tcpip.Udp;
+import org.jnetpcap.protocol.voip.Rtp;
+import org.jnetpcap.protocol.voip.Sdp;
+import org.jnetpcap.protocol.voip.Sip;
+import org.jnetpcap.protocol.vpn.L2TP;
+import org.jnetpcap.protocol.wan.PPP;
 
 import java.util.ArrayList;
 
@@ -45,6 +51,13 @@ public class Extractor {
         final Http http=new Http();
         final Udp udp=new Udp();
         final Icmp icmp=new Icmp();
+
+        final Arp arp=new Arp();    // network
+        final Rtp rtp=new Rtp();    // voip
+        final PPP ppp=new PPP();    // wan
+        final Sdp sdp=new Sdp();    // voip
+        final Sip sip=new Sip();    // voip
+        final L2TP l2tp=new L2TP(); // vpn
 
         // handle each packet
         @Override
